@@ -115,7 +115,7 @@ Here we see that
 
 What we don't see is that `foo` itself has internal `functionBody` property, which cannot be accessed but used when you type `foo()`. 
 
-When you use `foo.someMethod()`, all built-in methods come from `Function.prototype` and down the chain `Object.prototype`.
+When you use `foo.someMethod()`, all built-in methods come from `Function.prototype` and down the chain from `Object.prototype`.
 
 `foo.prototype` typically does not used at all if function is not a constructor, and vice versa, extensively used in the case of constructor function.
 
