@@ -25,11 +25,14 @@ JavaScript inheritance model understanding is important even if you are not goin
   * function prototype object
 * Function `prototype` object is used by JavaScript when function is invoked as a constructor (with `new` keyword) to initialize newly created object `__proto__` property
 * Every object has built-in `__proto__` property
+  * `__proto__` property correspond to internal, hidden `[[Prototype]]` property of the object
+  * `__proto__` property accessors standardized only in ES6. In ES5, standard way to access this property is `Object.getPrototypeOf()` method
+  * In ES6 it can be set, it is just object reference
   * As functions are also objects, they also have it
   * It is possible to create object without `__proto__` property using `var obj = Object.create(null)`, but it does not have useful application
-* Object referenced with `__proto__` property of given object is a "parent". Parent can also have `__proto__` property to its "parent" thus forming "prototype chain"
+* Object referenced with `__proto__` property of given object is its "parent". Parent can also have `__proto__` property to its "parent", thus forming "prototype chain"
 * "Prototype chain" of objects or "prototypal inheritance chain" is not the same as an "Inheritance model". 
-* Inheritance model is a specifically organized chain of constructors
+* "Inheritance model" is a specifically organized chain of constructors
   * Again, remember, every constructor function consists of TWO objects
 
 ## Built-in constructor functions
