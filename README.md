@@ -250,3 +250,5 @@ Collection.prototype.add = function (x){
 [Dmitry Soshnikov blog](http://dmitrysoshnikov.com/)
 
 [Dr. Axel Rauschmayer blog](http://www.2ality.com/)
+
+[This StackOverflow topic](http://stackoverflow.com/questions/572897/how-does-javascript-prototype-work)
