@@ -60,10 +60,11 @@ JavaScript authors have named a function, with the name `Object`. Then, they hav
 Of course, it is confusing. But, only for the first time. Then, you get used.
 
 To summarize:
-* Every function in JS is an object, more exactly - two objects: function itself and its prototype
+* Every function in JS is an object, more exactly - two objects: function itself and its prototype object
 * There are two distinct constructor functions `Function` and `Object` related to each-other (see later)
 * Every function in system inherits from `Function.prototype`
 * Every object in system inherits from `Object.prototype`
+* `Function.prototype` itself inherits from `Object.prototype`
 
 ## "Prototype" term mess
 When one says word "prototype", it immediately starts real mess in heads of his listeners. Speaker always need to be precisely clear, what he is talking about.
