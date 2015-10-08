@@ -48,7 +48,7 @@ Here is a list of most popular JavaScript built-in constructors. They are constr
 * RegExp
 * String
 
-More complete list is here [MDN:Standard built-in objects] (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)
+More complete list is here [Standard built-in objects] (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)
 
 Most confusing, of course, are `Function` and `Object`. Technically, they both are functions, constructor functions. 
 
