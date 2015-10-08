@@ -55,7 +55,7 @@ Most confusing, of course, are `Function` and `Object`. Technically, they both a
 ## "Function" and "Object" terms mess
 Close your eyes and take this as given. 
 
-JavaScript authors have named a function with name `Object`. Then they have named another function with name `Function`. And then they have made every function in a system to be an object.
+JavaScript authors have named a function, with the name `Object`. Then, they have named another function, with the name `Function`. And then, they have made every function in a system to be an object.
 
 Of course, it is confusing. But only for the first time. Then you get used.
 
