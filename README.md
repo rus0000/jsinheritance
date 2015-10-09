@@ -127,6 +127,8 @@ When you use `foo.someMethod()`, all built-in methods come from `Function.protot
 
 `foo.prototype` typically does not used at all if function is not a constructor, and vice versa, extensively used in the case of constructor function.
 
+`foo.prototype` can be set to any other object reference or promitive value. Setting it to other object is a common pattern to define a constructor. Setting it to undefined/null is a way to remove that object at all, since it will lose any references and will be grabage-collected, but this is very uncommon and not recommended.
+
 ## Creating simple objects with inheritance
 Simple objects created as object literals or with `Object.create` function.
 ```javascript
@@ -245,18 +247,13 @@ Collection.prototype.add = function (x){
   this.elements.push(x);
 };
 ```
+## Mixins
 
 ## Reading
-[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-
-[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-
-[Object.prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
-
-[Juriy Zaytsev (kangax) blog](http://perfectionkills.com/)
-
-[Dmitry Soshnikov blog](http://dmitrysoshnikov.com/)
-
-[Dr. Axel Rauschmayer blog](http://www.2ality.com/)
-
-[This StackOverflow topic](http://stackoverflow.com/questions/572897/how-does-javascript-prototype-work)
+* [Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+* [Object.prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
+* [Juriy Zaytsev (kangax) blog](http://perfectionkills.com/)
+* [Dmitry Soshnikov blog](http://dmitrysoshnikov.com/)
+* [Dr. Axel Rauschmayer blog](http://www.2ality.com/)
+* [This StackOverflow topic](http://stackoverflow.com/questions/572897/how-does-javascript-prototype-work)
