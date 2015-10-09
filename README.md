@@ -29,7 +29,7 @@ JavaScript inheritance model understanding is important even if you are not goin
   * `__proto__` property accessors standardized only in ES6. In ES5, standard way to access this property is `Object.getPrototypeOf()` method
   * In ES6 it can be set, it is just object reference
   * As functions are also objects, they also have it
-  * It is possible to create object without `__proto__` property using `var obj = Object.create(null)`, but it does not have useful application
+  * It is possible to create object without `__proto__` property using `var obj = Object.create(null)`, but it does not have a lot of useful application
 * Object referenced with `__proto__` property of given object is its "parent". Parent can also have `__proto__` property to its "parent", thus forming "prototype chain"
 * "Prototype chain" of objects or "prototypal inheritance chain" is not the same as an "Inheritance model". 
 * "Inheritance model" is a specifically organized chain of constructors
@@ -143,7 +143,7 @@ console.log(bar.b); //20
 
 Important moment here is that in case of changing `bar.a` value, JavaScript automatically creates `bar.a` own property with new value, to prevent prototype pollution.
 
-Even if prototype chain of `foo` and `bar` looks very simplistic, we can note, that both have an inherited `constructor` property, which points to the `Object` constructor, which itself inherits from `Function.prototype`. More of that, there are a lot of built-in methods in `Object.prototype` itself, not displayed for clarity.
+Even if prototype chain of `foo` and `bar` looks very simplistic, we can note, that both have an inherited `constructor` property, which points to the `Object` constructor, which itself inherits from `Function.prototype`. More of that, there are a lot of built-in methods in `Object.prototype` itself, not displayed for clarity. They all are accessible on `foo` and `bar`.
 
 ## Creating an object with constructor function
 Now, let's declare a simple constructor function and create an object instance using it.
