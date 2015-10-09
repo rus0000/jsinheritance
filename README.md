@@ -8,6 +8,14 @@ Thanks to Dmitry Soshnikov for his excellent post: [JavaScript. The core.] (http
 
 JavaScript inheritance model understanding is important even if you are not going to use JavaScript OOP patterns, since many of built-in functionality based on inheritance.
 
+Diagrams notation
+* Blocks are JavaScript objects
+* Title of the block shows an accessor to that object
+* All other sections in block are object properties
+* Arrows are references, with meaning, that given property holds reference to a pointed object. Source of arrow is important, it identifies property, but end is not, it always points to the object
+* Prototype chain is colored in red
+* Built-in porperties may be not listed and shorted to <built-ins>
+
 ## Some JavaScript basics
 * In JavaScript we have functions and objects
 * Functions are also objects but of special type
