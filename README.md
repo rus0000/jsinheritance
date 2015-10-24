@@ -93,7 +93,7 @@ To summarize:
 * All prototype chains typically ends with `Object.prototype`
 
 ## Function and Object constructors' relation
-Relation between `Function` and `Object` constructors is very important, since it takes part in inheritance.
+Relation between `Function` and `Object` constructors is very important, since it plays important role in inheritance.
 
 ![alt Function Object relationship](Function-Object.png "Function Object relationship")
 
