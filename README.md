@@ -8,7 +8,7 @@ JavaScript inheritance understanding is important even if you are not going to u
 
 Diagrams notation
 * Blocks are JavaScript objects
-* Title of the block shows an accessor to that object
+* Title of the block denotes an accessor to that object
 * All other sections in block are object properties
 * Arrows are references, with meaning, that given property holds reference to a pointed object. Source of arrow is important, it identifies property, but end is not, it always points to the object
 * Prototype chain is colored in red
