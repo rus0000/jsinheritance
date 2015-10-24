@@ -85,10 +85,11 @@ Meanings of term "prototype":
 
 To summarize:
 * Only a function may have `prototype` property
-* `prototype` property of a function holds reference to an auxiliary object, which is used only when function is invoked as a constructor, with `new` keyword, and completely ignored for all other regular functions
-* All objects may have prototype chain
+* Every function has `prototype` property
+* `prototype` property of a function holds reference to an auxiliary object, which is used only when this function is invoked as a constructor, with `new` keyword, and completely ignored for all other regular functions
+* Any object may have prototype chain
 * Prototype chain is built using `__proto__` property, not `prototype` property
-* Functions are also objects, and thus have `__proto__` property, typically referencing to `Function.prototype` built-in object. Usually there is no chaining, just direct reference to `Function.prototype`
+* Functions are also objects, and thus have `__proto__` property, typically referencing to `Function.prototype` built-in object. Usually there is no chaining at all, just direct reference to `Function.prototype`
 * All prototype chains typically ends with `Object.prototype`
 
 ## Function and Object constructors' relation
