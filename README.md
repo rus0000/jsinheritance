@@ -92,7 +92,7 @@ To summarize:
 * All prototype chains typically ends with `Object.prototype`
 
 ## Function and Object constructors' relation
-Relation between `Function` and `Object` constructors is very important, since it takes part in inheritance model.
+Relation between `Function` and `Object` constructors is very important, since it takes part in inheritance.
 
 ![alt Function Object relationship](Function-Object.png "Function Object relationship")
 
@@ -105,7 +105,7 @@ As you may see `Function` and `Object` are both functions, thus they both have a
 Both `prototype` and `__proto__` properties of a `Function` refer to the same `Function.prototype` object.
 
 ## Function in JavaScript
-Having simple function declaration, we get following inheritance model.
+Having simple function declaration, we get following inheritance.
 ```javascript
 function foo(){}
 ```
@@ -175,7 +175,7 @@ var bar = new Bar();
 
 `bar` object has its own property `a`, because this property created every time constructor is invoked. This behavior allows to produce different objects with their own property `a`, but inheriting "methods" from `Bar` prototype.
 
-## Classical JavaScript inheritance model and OOP
+## Classical JavaScript inheritance and OOP
 ```javascript
 // Parent
 var Duck = function (name){
