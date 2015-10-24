@@ -1,6 +1,6 @@
 #  JavaScript prototype-based inheritance model
 
-This post is actual for ECMA-262 3rd edition (ES5) and ECMAScript 2015 (ES6)
+This post is actual for ECMA-262 5th edition (ES5) and ECMAScript 2015 (ES6)
 ## Motivation
 A lot of incomplete and even wrong info can be found on Internet about JavaScript inheritance model. I just try to explain it again with help of diagrams.
 
