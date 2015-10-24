@@ -1,10 +1,10 @@
-#  JavaScript prototype-based inheritance model
+#  JavaScript prototype-based inheritance 
 
 This post is actual for ECMA-262 5th edition ECMAScript 5 (ES5) and ECMA-262 6th edition ECMAScript 2015 (ES6)
 ## Motivation
-A lot of incomplete and even wrong info can be found on Internet about JavaScript inheritance model. I just try to explain it again with help of diagrams.
+A lot of incomplete and even wrong info can be found on Internet about JavaScript inheritancem. I just try to explain it again with help of diagrams.
 
-JavaScript inheritance model understanding is important even if you are not going to use JavaScript OOP patterns, since many of built-in functionality based on inheritance.
+JavaScript inheritance understanding is important even if you are not going to use JavaScript OOP patterns, since many of built-in functionality based on inheritance.
 
 Diagrams notation
 * Blocks are JavaScript objects
@@ -37,9 +37,7 @@ Diagrams notation
   * As functions are also objects, they also have it
   * It is possible to create object without `__proto__` property using `var obj = Object.create(null)`, but it does not have a lot of useful application
 * Object referenced with `__proto__` property of given object is its "parent". Parent can also have `__proto__` property to its "parent", thus forming "prototype chain"
-* "Prototype chain" of objects or "prototypal inheritance chain" is not the same as an "Inheritance model". 
-* "Inheritance model" is a specifically organized chain of constructors
-  * Again, remember, every constructor function consists of TWO objects
+* "Prototype chain" of objects or "prototypal inheritance chain" is a result of using JavaScript Inheritance
 
 ## Built-in constructor functions
 Here is a list of most popular JavaScript built-in constructors. They are constructors, not just objects - this is important!
