@@ -12,7 +12,7 @@ Diagrams notation
 * All other sections in block are object properties
 * Arrows are references, with meaning, that given property holds reference to a pointed object. Source of arrow is important, it identifies property, but end is not, it always points to the object
 * Prototype chain is colored in red
-* Built-in porperties may be not listed and shorted to <built-ins>
+* Built-in porperties may be not listed and shortened to `<built-ins>`
 
 ## Some JavaScript basics
 * In JavaScript we have functions and objects
