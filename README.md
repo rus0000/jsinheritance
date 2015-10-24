@@ -2,7 +2,7 @@
 
 This post is actual for ECMA-262 5th edition ECMAScript 5 (ES5) and ECMA-262 6th edition ECMAScript 2015 (ES6)
 ## Motivation
-A lot of incomplete and even wrong info can be found on Internet about JavaScript inheritancem. I just try to explain it again with help of diagrams.
+A lot of incomplete and even wrong info can be found on Internet about JavaScript inheritance. I just try to explain it again with help of diagrams.
 
 JavaScript inheritance understanding is important even if you are not going to use JavaScript OOP patterns, since many of built-in functionality based on inheritance.
 
