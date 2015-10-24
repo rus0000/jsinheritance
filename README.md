@@ -4,8 +4,6 @@ This post is actual for ECMA-262 5th edition ECMAScript 5 (ES5) and ECMA-262 6th
 ## Motivation
 A lot of incomplete and even wrong info can be found on Internet about JavaScript inheritance model. I just try to explain it again with help of diagrams.
 
-Thanks to Dmitry Soshnikov for his excellent post: [JavaScript. The core.] (http://dmitrysoshnikov.com/ecmascript/javascript-the-core/)
-
 JavaScript inheritance model understanding is important even if you are not going to use JavaScript OOP patterns, since many of built-in functionality based on inheritance.
 
 Diagrams notation
@@ -253,7 +251,7 @@ Collection.prototype.add = function (x){
 * [Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * [Object.prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
-* [Juriy Zaytsev (kangax) blog](http://perfectionkills.com/)
-* [Dmitry Soshnikov blog](http://dmitrysoshnikov.com/)
 * [Dr. Axel Rauschmayer blog](http://www.2ality.com/)
+* [Juriy Zaytsev (kangax) blog](http://perfectionkills.com/)
+* [Dmitry Soshnikov blog](http://dmitrysoshnikov.com/ecmascript/javascript-the-core/)
 * [This StackOverflow topic](http://stackoverflow.com/questions/572897/how-does-javascript-prototype-work)
