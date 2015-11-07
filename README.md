@@ -16,6 +16,7 @@ Diagrams notation
 
 ## TL;DR
 <a href="./images/Function-Object.png"><img src="./images/Function-Object.png"  width="233" height="154"></a>
+<a href="./images/foo.png"><img src="./images/foo.png"  width="233" height="154"></a>
 
 
 ## Some JavaScript basics
