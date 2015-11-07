@@ -35,6 +35,7 @@ Below is a more detailed explanation.
 * By convention, constructor functions are named with `PascalCase`, all other functions are named with `camelCase`
 
 ### Advanced part
+#### Functions
 * Every **function declaration** immediately creates **TWO OBJECTS**:
   1. the `function` object itself
   2. the `prototype` object, belonging to this function
@@ -42,6 +43,8 @@ Below is a more detailed explanation.
 * `function` object can be accessed just using function name without parenthesis, for example `myFunction`
 * `prototype` object can be accessed using `prototype` property of `function` object, for example `myFunction.prototype`
 * `prototype` object is used by JavaScript, when function is invoked as a constructor (with `new` keyword) to initialize newly created object `__proto__` property
+
+#### Objects
 * Every object has a built-in `__proto__` property
 * `__proto__` property correspond to internal, hidden `[[Prototype]]` property of the object
 * `function` object and its `prototype` object, both, also have `__proto__` property
