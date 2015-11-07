@@ -148,7 +148,7 @@ function foo(){}
 ```
 ![alt Function in Javascript](./images/foo.png "Function in Javascript")
 
-Here we see that
+What we can se here:
 * function declaration creates two objects: `foo` itself and `foo.prototype`, even if `foo` does not going to be used as constructor function
 * `foo` inherits from `Function.prototype`
 * `foo.prototype` inherits from `Object.prototype`
