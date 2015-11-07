@@ -275,7 +275,7 @@ function Collection(){
   this.elements = [];
 }
 
-// No change
+// No changes in code, but result will be different
 Collection.prototype.add = function (x){
   this.elements.push(x);
 };
