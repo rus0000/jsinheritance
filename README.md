@@ -6,7 +6,7 @@ A lot of incomplete and even wrong info can be found on Internet about JavaScrip
 
 JavaScript inheritance understanding is important even if you are not going to use JavaScript OOP patterns, since many of built-in functionality based on inheritance.
 
-Diagrams notation
+Diagrams notation:
 * Blocks are JavaScript objects
 * Title of the block denotes an accessor to that object
 * All other sections in block are object properties
@@ -15,7 +15,7 @@ Diagrams notation
 * Built-in porperties may be not listed and shortened to `<built-ins>`
 
 ## TL;DR
-<a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/Function-Object.png" target="_blank"><img src="./images/Function-Object.png" width="233" height="154"></a>
+<a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/Function-Object.png" target="_blank" alt="Function - Object relationship"><img src="./images/Function-Object.png" width="233" height="154"></a>
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/foo.png" target="_blank"><img src="./images/foo.png" width="233" height="154"></a>
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/simple-object.png" target="_blank"><img src="./images/simple-object.png"  width="233" height="154"></a>
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/bar.png" target="_blank"><img src="./images/bar.png" width="233" height="154"></a>
