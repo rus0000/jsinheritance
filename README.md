@@ -112,11 +112,11 @@ To summarize:
 
 The prototypal inheritance chain is drawn in red.
 
-As you may see `Function` and `Object` are both functions, thus they both have a `prototype` property, which holds a reference to another object, which is called "constructor prototype".
+As you may see `Function` and `Object` are both functions, thus they both have a `prototype` property, which holds a reference to another object, which by convention is called "constructor prototype".
 
 `Function` and `Object` are both functions, thus their `__proto__` property, refers to `Function.prototype`, which itself has `__proto__` property referencing to `Object.prototype` and forming `prototypal inheritance chain`
 
-Both `prototype` and `__proto__` properties of a `Function` refer to the same `Function.prototype` object.
+Both `prototype` and `__proto__` properties of a `Function` refer to the same `Function.prototype` object, which is an exclusive situation only for built-in `Function` constructor.
 
 ## "Prototype" term mess
 When one says word "prototype", it immediately starts real mess in heads of his listeners. Speaker always need to be precisely clear, what he is talking about.
@@ -136,9 +136,10 @@ To summarize:
 * Every function has `prototype` property
 * `prototype` property of a function holds reference to an auxiliary object, which is used only when this function is invoked as a constructor, with `new` keyword, and completely ignored for all other regular functions
 * Any object may have prototype chain
-* Prototype chain is built using `__proto__` property, not `prototype` property
+* **Prototype chain is built using `__proto__` property, not `prototype` property**
 * Functions are also objects, and thus have `__proto__` property, typically referencing to `Function.prototype` built-in object. Usually there is no chaining at all, just direct reference to `Function.prototype`
 * All prototype chains typically ends with `Object.prototype`
+* `Object.prototype.__proto__` holds `null`. This is real end of prototype chain.
 
 ## Function in JavaScript
 Having simple function declaration, we get following inheritance.
