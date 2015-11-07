@@ -50,10 +50,10 @@ Below is a more detailed explanation.
 * `function` object and its `prototype` object, both, also have `__proto__` property
 * `__proto__` property accessors standardized only in ES6. In ES5, standard way to access value this property is `Object.getPrototypeOf()` method
 * In ES6 `__proto__` property can be set, it just holds reference to another object
-* It is possible to create object without `__proto__` property using `var obj = Object.create(null)`, but it does not have a lot of useful application
-* Object, referenced by `__proto__` property of a given object, is called its `parent`. That `parent` object can also have `__proto__` property to its own `parent`, thus forming `prototype chain`
+* It is possible to create object without `__proto__` property using `var obj = Object.create(null)`
+* Object, which is referenced by `__proto__` property of a given object, is called its `parent`. That `parent` object can also have `__proto__` property to its own `parent`, thus forming `prototype chain`
 * `prototype chain` of objects or `prototypal inheritance chain` is a way, how **inheritance** is implemented in JavaScript
-* When JavaScript runtime looks for a property, with a given name, on an object, it first examine object itself, and then all objects down its prototype chain
+* When JavaScript runtime looks for a property, with a given name, on an object, it first examines object itself, and then all objects down its prototype chain
 
 ## Built-in constructor functions
 Here is a list of most popular JavaScript built-in constructors. They are constructors, not just objects - this is important!
@@ -86,9 +86,9 @@ Meanings of term "object":
 * Any JavaScript object in the system's memory
 * JSON object
   * JSON stands for "JavaScript Object Notation"".
-  * Typical misuse and misunderstanding is, that JSON is always a `string`, which will become an object in the memory only after parsing
-* POJO which stands for "Plain Old Javascript Object" or just "simple object"
-  * This is an object without any custom prototype chain, or any "methods", just a container for data
+  * Typical misuse and misunderstanding is, that JSON is not an object, it is always a `string`, which will become an object in the memory only after parsing
+* POJO, which stands for "Plain Old Javascript Object", or just "simple object"
+  * This is an object without any custom prototype chain, or any added "methods", just a container for data
   * Its `__proto__` property refers directly to `Object.prototype`, or equal to `null`
   * Can be considered as a Hash
 
@@ -104,9 +104,9 @@ Relation between `Function` and `Object` constructors is very important, since i
 To summarize:
 * Every function in JS is an object, more exactly - two objects: function itself and its prototype
 * There are two distinct constructor functions `Function` and `Object` related to each-other
+* `Function.prototype` object itself inherits from `Object.prototype`
 * Every function in the system inherits from `Function.prototype`
 * Every object in the system inherits from `Object.prototype`
-* `Function.prototype` object itself inherits from `Object.prototype`
 
 ![alt Function Object relationship](./images/Function-Object.png "Function Object relationship")
 
