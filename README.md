@@ -282,8 +282,6 @@ Collection.prototype.add = function (x){
   this.elements.push(x);
 };
 ```
-## Mixins
-
 ## Reading
 * [Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
