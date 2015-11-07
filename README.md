@@ -160,7 +160,7 @@ When you use `foo.someMethod()`, all built-in methods come from `Function.protot
 
 `foo.prototype` typically does not used at all, if function is not a constructor, and vice versa, is used in the case of a constructor function.
 
-`foo.prototype` can be set to any other object reference or primitive value. Setting it to a new object is a common pattern to define a constructor.
+`foo.prototype` can be set to any other object reference or primitive value. Setting it to a new object or define new properties on it is a common pattern to define a constructor.
 
 ## Creating simple objects with inheritance
 Simple objects created as object literals or with `Object.create` function.
