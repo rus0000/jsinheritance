@@ -1,4 +1,4 @@
-#  JavaScript prototype-based inheritance 
+#  JavaScript prototype-based inheritance
 
 This post is actual for ECMA-262 5th edition ECMAScript 5 (ES5) and ECMA-262 6th edition ECMAScript 2015 (ES6)
 ## Motivation
