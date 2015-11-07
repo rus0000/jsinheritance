@@ -15,11 +15,11 @@ Diagrams notation
 * Built-in porperties may be not listed and shortened to `<built-ins>`
 
 ## TL;DR
-<a href="./images/Function-Object.png"><img src="./images/Function-Object.png" width="233" height="154"></a>
-<a href="./images/foo.png"><img src="./images/foo.png" width="233" height="154"></a>
-<a href="./images/simple-object.png"><img src="./images/simple-object.png"  width="233" height="154"></a>
-<a href="./images/bar.png"><img src="./images/bar.png" width="233" height="154"></a>
-<a href="./images/oop.png"><img src="./images/oop.png" width="233" height="154"></a>
+<a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/Function-Object.png" target="_blank"><img src="./images/Function-Object.png" width="233" height="154"></a>
+<a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/foo.png" target="_blank"><img src="./images/foo.png" width="233" height="154"></a>
+<a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/simple-object.png" target="_blank"><img src="./images/simple-object.png"  width="233" height="154"></a>
+<a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/bar.png" target="_blank"><img src="./images/bar.png" width="233" height="154"></a>
+<a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/oop.png" target="_blank"><img src="./images/oop.png" width="233" height="154"></a>
 
 
 ## Some JavaScript basics
