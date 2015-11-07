@@ -112,7 +112,7 @@ To summarize:
 
 The prototypal inheritance chain is drawn in red.
 
-As you may see `Function` and `Object` are both functions, thus they both have a `prototype` property, which is a reference to another object, which is called "constructor prototype".
+As you may see `Function` and `Object` are both functions, thus they both have a `prototype` property, which holds a reference to another object, which is called "constructor prototype".
 
 `Function` and `Object` are both functions, thus their `__proto__` property, refers to `Function.prototype`, which itself has `__proto__` property referencing to `Object.prototype` and forming `prototypal inheritance chain`
 
@@ -125,7 +125,7 @@ Meanings of term "prototype":
 * A prototype of a given object
   * Its parent
   * Accessible with `someObject.__proto__` property
-* A prototype object of a given function, especially a constructor function
+* A `prototype` object of a given function, especially a constructor function
   * Accessible with `SomeConstructor.prototype` property
 * A built-in `Function.prototype` object
 * A built-in `Object.prototype` object
