@@ -15,7 +15,7 @@ Diagrams notation
 * Built-in porperties may be not listed and shortened to `<built-ins>`
 
 ## TL;DR
-<a href="./images/Function-Object.png"><img src="./images/Function-Object.png " align="left" height="200" width="10" ></a>
+<a href="./images/Function-Object.png"><img src="./images/Function-Object.png"  width="233" height="154"></a>
 
 
 ## Some JavaScript basics
