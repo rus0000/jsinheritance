@@ -15,7 +15,7 @@ Diagrams notation
 * Built-in porperties may be not listed and shortened to `<built-ins>`
 
 ## TL;DR
-![alt Function Object relationship](./images/Function-Object.png =200x100 "Function Object relationship")
+<a href="./images/Function-Object.png"><img src="./images/Function-Object.png " align="left" height="200" width="10" ></a>
 
 
 ## Some JavaScript basics
