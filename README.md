@@ -37,8 +37,8 @@ Below is a more detailed explanation.
 ### Advanced part
 #### Functions
 * Every **function declaration** immediately creates **TWO OBJECTS**:
-  1. the `function` object itself
-  2. the `prototype` object, belonging to this function
+  * the `function` object itself
+  * the `prototype` object, belonging to this function
   * That happens **before** any code execution even begins, just after code parsing
 * `function` object can be accessed just using function name without parenthesis, for example `myFunction`
 * `prototype` object can be accessed using `prototype` property of `function` object, for example `myFunction.prototype`
