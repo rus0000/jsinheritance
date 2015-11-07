@@ -154,13 +154,13 @@ What we can se here:
 * `foo.prototype` inherits from `Object.prototype`
 * this inheritance valid for any, even anonymous function
 
-What we don't see is that `foo` itself has internal `functionBody` property, which cannot be accessed but used when you type `foo()`. 
+What we don't see is that `foo` itself has internal `[[Code]]` property, which cannot be accessed but is used when we invoke it with `foo()`.
 
 When you use `foo.someMethod()`, all built-in methods come from `Function.prototype` and down the chain from `Object.prototype`.
 
-`foo.prototype` typically does not used at all if function is not a constructor, and vice versa, extensively used in the case of constructor function.
+`foo.prototype` typically does not used at all, if function is not a constructor, and vice versa, is used in the case of a constructor function.
 
-`foo.prototype` can be set to any other object reference or promitive value. Setting it to other object is a common pattern to define a constructor. Setting it to undefined/null is a way to remove that object at all, since it will lose any references and will be grabage-collected, but this is very uncommon and not recommended.
+`foo.prototype` can be set to any other object reference or primitive value. Setting it to a new object is a common pattern to define a constructor.
 
 ## Creating simple objects with inheritance
 Simple objects created as object literals or with `Object.create` function.
