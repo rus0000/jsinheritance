@@ -14,6 +14,10 @@ Diagrams notation
 * Prototype chain is colored in red
 * Built-in porperties may be not listed and shortened to `<built-ins>`
 
+## TL;DR
+![alt Function Object relationship](./images/Function-Object.png =200x100 "Function Object relationship")
+
+
 ## Some JavaScript basics
 * In JavaScript we have functions and objects
 * Functions are also objects but of special type
@@ -95,7 +99,7 @@ To summarize:
 ## Function and Object constructors' relation
 Relation between `Function` and `Object` constructors is very important, since it plays important role in inheritance.
 
-![alt Function Object relationship](Function-Object.png "Function Object relationship")
+![alt Function Object relationship](./images/Function-Object.png "Function Object relationship")
 
 The prototypal inheritance chain is drawn in red.
 
@@ -110,7 +114,7 @@ Having simple function declaration, we get following inheritance.
 ```javascript
 function foo(){}
 ```
-![alt Function in Javascript](foo.png "Function in Javascript")
+![alt Function in Javascript](./images/foo.png "Function in Javascript")
 
 Here we see that
 * function declaration creates two objects: `foo` itself and `foo.prototype`, even if `foo` does not going to be used as constructor function
@@ -146,7 +150,7 @@ console.log(bar.a); //10
 console.log(bar.b); //20
 ```
 
-![alt Simple object creation](simple-object.png "Simple object creation")
+![alt Simple object creation](./images/simple-object.png "Simple object creation")
 
 Important moment here is that in case of changing `bar.a` value, JavaScript automatically creates `bar.a` own property with new value, to prevent prototype pollution.
 
@@ -170,7 +174,7 @@ Bar.prototype.writeA = function (a) {
 var bar = new Bar();
 ```
 
-![alt Object creation with constructor function](bar.png "Object creation with constructor function")
+![alt Object creation with constructor function](./images/bar.png "Object creation with constructor function")
 
 `readA` and `writeA` are just regular JS functions with similar references to `Function` and `Object` as `Bar` function itself. These references are not shown for clarity. The only important difference with `Bar` is, that their prototypes are not of any use.
 
@@ -208,7 +212,7 @@ TalkingDuck.prototype.quack = function (){
 var donald = new TalkingDuck("Donald");
 ```
 
-![alt JavaScript classical OOP](oop.png "JavaScript classical OOP")
+![alt JavaScript classical OOP](./images/oop.png "JavaScript classical OOP")
 
 Prototype chain of `donald` is `donald -> TalkingDuck.prototype -> Duck.prototype -> Object.prototype`. `Function.prototype` does not taking part in this chain, since `donald` not a function.
 ```javascript
