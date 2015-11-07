@@ -2,17 +2,17 @@
 
 This post is actual for ECMA-262 5th edition ECMAScript 5 (ES5) and ECMA-262 6th edition ECMAScript 2015 (ES6)
 ## Motivation
-A lot of incomplete and even wrong info can be found on Internet about JavaScript inheritance. I just try to explain it again with help of diagrams.
+A lot of incomplete and even wrong info can be found on Internet about JavaScript prototypal inheritance. I will just try to explain it again with help of diagrams.
 
 JavaScript inheritance understanding is important even if you are not going to use JavaScript OOP patterns, since many of built-in functionality based on inheritance.
 
 Diagrams notation:
 * Blocks are JavaScript objects
 * Title of the block denotes an accessor to that object
-* All other sections in block are object properties
-* Arrows are references, with meaning, that given property holds reference to a pointed object. Source of arrow is important, it identifies property, but end is not, it always points to the object
-* Prototype chain is colored in red
-* Built-in porperties may be not listed and shortened to `<built-ins>`
+* All other sections in a block are properties of this object
+* Arrows are references, with meaning, that given property holds reference to a pointed object. Source of arrow is important, it identifies property, but end is not, it is always points to another object
+* Prototype chain, which is used by JS inheritance system is colored in red
+* Built-in porperties, some times, are not listed and shortened to `<built-ins>`
 
 ## TL;DR
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/Function-Object.png" target="_blank"><img src="./images/Function-Object.png" width="233" height="154" alt="Function - Object relationship" title="Function - Object relationship"></a>
@@ -21,31 +21,36 @@ Diagrams notation:
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/bar.png" target="_blank"><img src="./images/bar.png" width="233" height="154"></a>
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/oop.png" target="_blank"><img src="./images/oop.png" width="233" height="154"></a>
 
+Below is a more detailed explanation.
 
 ## Some JavaScript basics
+### Basic part
 * In JavaScript we have functions and objects
-* Functions are also objects but of special type
-* Functions does not bound or belongs to objects
-  * There is no "methods" in JavaScript. "Method" is only a semantic use of function in context of object. Object can have property, which is a function reference. When such a function is invoked using `object.function()` notation, it is executed in context of object. But the same function can be invoked in another context as well
-* Every function (technically) can be used as a constructor, but this doesn't mean it *should* be used as a constructor
-* By convention, functions, which are intended to be used as constructors, named with `PascalCase`, all other functions named with `camelCase`
-* Constructor functions are intended to be invoked with `new` keyword to construct a new object
-  * When constructor functions are invoked without `new` keyword, *depending on implementation*, they may
-    * silently fail and produce undesired effect
-    * throw an error
-    * handle this situation, and work as appropriate
-* Every function declaration immediately creates TWO OBJECTS: 
-  * function object itself
-  * function prototype object
-* Function `prototype` object is used by JavaScript when function is invoked as a constructor (with `new` keyword) to initialize newly created object `__proto__` property
-* Every object has built-in `__proto__` property
-  * `__proto__` property correspond to internal, hidden `[[Prototype]]` property of the object
-  * `__proto__` property accessors standardized only in ES6. In ES5, standard way to access this property is `Object.getPrototypeOf()` method
-  * In ES6 it can be set, it is just object reference
-  * As functions are also objects, they also have it
-  * It is possible to create object without `__proto__` property using `var obj = Object.create(null)`, but it does not have a lot of useful application
-* Object referenced with `__proto__` property of given object is its "parent". Parent can also have `__proto__` property to its "parent", thus forming "prototype chain"
-* "Prototype chain" of objects or "prototypal inheritance chain" is a result of using JavaScript Inheritance
+* There is no `methods` or `members` in an object, there is only `properties`
+* Object property can hold a value or reference to another object
+* Functions are also objects, but of special type
+* There is no `classes` and no `constructors` in a language
+* Every function can be invoked a constructor, but this doesn't mean it *should* be invoked as a constructor
+* Functions, which are intended to be used as constructors just called `constructor functions`. Tey have to be invoked with a `new` keyword to construct a new object
+* By convention, constructor functions are named with `PascalCase`, all other functions are named with `camelCase`
+
+### Advanced part
+* Every **function declaration** immediately creates **TWO OBJECTS**:
+  1) the `function` object itself
+  2) the `prototype` object, belonging to this function
+  * That happens **before** any code execution even begins, just after code parsing
+* `function` object can be accessed just using function name without parenthesis, for example `myFunction`
+* `prototype` object can be accessed using `prototype` property of `function` object, for example `myFunction.prototype`
+* `prototype` object is used by JavaScript, when function is invoked as a constructor (with `new` keyword) to initialize newly created object `__proto__` property
+* Every object has a built-in `__proto__` property
+* `__proto__` property correspond to internal, hidden `[[Prototype]]` property of the object
+* `function` object and its `prototype` object, both, also have `__proto__` property
+* `__proto__` property accessors standardized only in ES6. In ES5, standard way to access value this property is `Object.getPrototypeOf()` method
+* In ES6 `__proto__` property can be set, it just holds reference to another object
+* It is possible to create object without `__proto__` property using `var obj = Object.create(null)`, but it does not have a lot of useful application
+* Object, referenced by `__proto__` property of a given object, is called its `parent`. That `parent` object can also have `__proto__` property to its own `parent`, thus forming `prototype chain`
+* `prototype chain` of objects or `prototypal inheritance chain` is a way, how **inheritance** is implemented in JavaScript
+* When JavaScript runtime looks for a property, with a given name, on an object, it first examine object itself, and then all objects down its prototype chain
 
 ## Built-in constructor functions
 Here is a list of most popular JavaScript built-in constructors. They are constructors, not just objects - this is important!
@@ -60,23 +65,55 @@ Here is a list of most popular JavaScript built-in constructors. They are constr
 * RegExp
 * String
 
-More complete list is here [Standard built-in objects] (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)
+More reading: [Standard built-in objects] (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)
 
 Most confusing, of course, are `Function` and `Object`. Technically, they both are functions, constructor functions. 
 
 ## "Function" and "Object" terms mess
-Close your eyes and take this as given. 
+Close your eyes and take it as given.
 
-JavaScript authors have named a function, with the name `Object`. Then, they have named another function, with the name `Function`. And then, they have made every function in a system to be an object.
+JavaScript authors have named a function, with the name `Object()`. Then, they have named another function in the system, with the name `Function()`. And then, they have made technically every function in the system to be an object.
 
-Of course, it is confusing. But, only for the first time. Then, you get used.
+Of course, this is confusing. But, only for the first time. Then, you get used.
+
+Speaker always need to be precisely clear, what he is talking about.
+
+Meanings of term "object":
+* Built-in `Object` constructor
+* Any JavaScript object in the system's memory
+* JSON object
+  * JSON stands for "JavaScript Object Notation"".
+  * Typical misuse and misunderstanding is, that JSON is always a `string`, which will become an object in the memory only after parsing
+* POJO which stands for "Plain Old Javascript Object" or just "simple object"
+  * This is an object without any custom prototype chain, or any "methods", just a container for data
+  * Its `__proto__` property refers directly to `Object.prototype`, or equal to `null`
+  * Can be considered as a Hash
+
+Meanings of term "function":
+* Built-in `Function` constructor
+* Any JavaScript function in the system's memory
+* Any function declaration or function expression in a source code
+  * This will become a *real* function only after parsing
+
+## Function and Object constructors' relation
+Relation between `Function` and `Object` constructors is very important, since it plays very important role in JavaScript inheritance.
 
 To summarize:
-* Every function in JS is an object, more exactly - two objects: function itself and its prototype object
-* There are two distinct constructor functions `Function` and `Object` related to each-other (see later)
-* Every function in system inherits from `Function.prototype`
-* Every object in system inherits from `Object.prototype`
-* `Function.prototype` itself inherits from `Object.prototype`
+* Every function in JS is an object, more exactly - two objects: function itself and its prototype
+* There are two distinct constructor functions `Function` and `Object` related to each-other
+* Every function in the system inherits from `Function.prototype`
+* Every object in the system inherits from `Object.prototype`
+* `Function.prototype` object itself inherits from `Object.prototype`
+
+![alt Function Object relationship](./images/Function-Object.png "Function Object relationship")
+
+The prototypal inheritance chain is drawn in red.
+
+As you may see `Function` and `Object` are both functions, thus they both have a `prototype` property, which is a reference to another object, which is called "constructor prototype".
+
+`Function` and `Object` are both functions, thus their `__proto__` property, refers to `Function.prototype`, which itself has `__proto__` property referencing to `Object.prototype` and forming `prototypal inheritance chain`
+
+Both `prototype` and `__proto__` properties of a `Function` refer to the same `Function.prototype` object.
 
 ## "Prototype" term mess
 When one says word "prototype", it immediately starts real mess in heads of his listeners. Speaker always need to be precisely clear, what he is talking about.
@@ -99,19 +136,6 @@ To summarize:
 * Prototype chain is built using `__proto__` property, not `prototype` property
 * Functions are also objects, and thus have `__proto__` property, typically referencing to `Function.prototype` built-in object. Usually there is no chaining at all, just direct reference to `Function.prototype`
 * All prototype chains typically ends with `Object.prototype`
-
-## Function and Object constructors' relation
-Relation between `Function` and `Object` constructors is very important, since it plays important role in inheritance.
-
-![alt Function Object relationship](./images/Function-Object.png "Function Object relationship")
-
-The prototypal inheritance chain is drawn in red.
-
-As you may see `Function` and `Object` are both functions, thus they both have a `prototype` property, which is a reference to another object, which is called "constructor prototype".
-
-`Function` and `Object` are both functions, thus their `__proto__` property, refers to `Function.prototype`, which itself has `__proto__` property referencing to `Object.prototype` and forming "prototypal inheritance chain".
-
-Both `prototype` and `__proto__` properties of a `Function` refer to the same `Function.prototype` object.
 
 ## Function in JavaScript
 Having simple function declaration, we get following inheritance.
