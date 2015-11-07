@@ -1,6 +1,6 @@
 #  JavaScript prototype-based inheritance
 
-This post is actual for ECMA-262 5th edition ECMAScript 5 (ES5) and ECMA-262 6th edition ECMAScript 2015 (ES6)
+This post is actual for ECMA-262 5th edition or ECMAScript 5 (ES5) and ECMA-262 6th edition or ECMAScript 2015 (ES6)
 ## Motivation
 A lot of incomplete and even wrong info can be found on Internet about JavaScript prototypal inheritance. I will just try to explain it again with help of diagrams.
 
@@ -26,18 +26,18 @@ Below is a more detailed explanation.
 ## Some JavaScript basics
 ### Basic part
 * In JavaScript we have functions and objects
-* There is no `methods` or `members` in an object, there is only `properties`
-* Object property can hold a value or reference to another object
+* There are no `methods` or `members` in an object, there are only `properties`
+* Object property can hold a value or reference to another object or function
 * Functions are also objects, but of special type
 * There is no `classes` and no `constructors` in a language
-* Every function can be invoked a constructor, but this doesn't mean it *should* be invoked as a constructor
-* Functions, which are intended to be used as constructors just called `constructor functions`. Tey have to be invoked with a `new` keyword to construct a new object
+* Every function can be invoked as a constructor, but this doesn't mean it *should* be invoked as a constructor
+* Functions, which are intended to be used as constructors, just called `constructor functions`. Tey have to be invoked with a `new` keyword to construct a new object
 * By convention, constructor functions are named with `PascalCase`, all other functions are named with `camelCase`
 
 ### Advanced part
 * Every **function declaration** immediately creates **TWO OBJECTS**:
-  1) the `function` object itself
-  2) the `prototype` object, belonging to this function
+  1. the `function` object itself
+  2. the `prototype` object, belonging to this function
   * That happens **before** any code execution even begins, just after code parsing
 * `function` object can be accessed just using function name without parenthesis, for example `myFunction`
 * `prototype` object can be accessed using `prototype` property of `function` object, for example `myFunction.prototype`
