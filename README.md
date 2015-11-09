@@ -273,7 +273,7 @@ console.log(donald.quack === TalkingDuck.prototype.quack); // true, method found
 
 ## Prototype pollution
 Prototype pollution is changing properties of objects in a prototype chain, affecting all other existing instances.
-The rule of thumb is not to put properties on a constructor prototype object. Only initialize them inside constructor function body. Constructor prototype should have only methods.
+The rule of thumb, is not to put properties on a constructor prototype object. Only initialize them inside constructor function body. Constructor prototype should have only methods.
 
 ```javascript
 function Collection(){}
