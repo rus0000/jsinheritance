@@ -263,7 +263,7 @@ donald.quack(); // "Donald Duck: Quack-quack! My name is Donald"
 
 ![alt JavaScript classical OOP](./images/oop.png "JavaScript classical OOP")
 
-Prototype chain of `donald` is `donald -> TalkingDuck.prototype -> Duck.prototype -> Object.prototype`. `Function.prototype` does not taking part in this chain, since `donald` not a function.
+Prototype chain of `donald` is `donald -> TalkingDuck.prototype -> Duck.prototype -> Object.prototype`. `Function.prototype` does not taking part in this chain, since `donald` is not a function.
 ```javascript
 console.log(donald.__proto__ === TalkingDuck.prototype); // true
 console.log(TalkingDuck.prototype.__proto__ === Duck.prototype); // true, result of invoking Object.create()
