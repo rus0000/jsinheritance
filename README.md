@@ -243,12 +243,12 @@ Duck.prototype.quack = function (){
 // Child
 var TalkingDuck = function (name){
   // Call parent constructor
-  Duck.call(this, name); //This is often forgotten
+  Duck.call(this, name); // This is often forgotten
 }
 
 // Inheritance
 TalkingDuck.prototype = Object.create(Duck.prototype);
-TalkingDuck.prototype.constructor = TalkingDuck; //This is often forgotten
+TalkingDuck.prototype.constructor = TalkingDuck; // This is often forgotten
 
 // Method overload
 TalkingDuck.prototype.quack = function (){
