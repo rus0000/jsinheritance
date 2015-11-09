@@ -115,7 +115,7 @@ Meanings of term "function":
 * Specific anonymous JavaScript function, referenced by some access path
 
 ## Function and Object constructors' relation
-Relation between `Function` and `Object` constructors is very important. It plays very important role in JavaScript inheritance.
+Relation between `Function` and `Object` constructors is very important. It plays major role in JavaScript inheritance.
 
 To summarize:
 * Every function in JS is an object, more exactly - two objects: function itself and its prototype
