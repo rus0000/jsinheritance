@@ -130,7 +130,7 @@ The prototypal inheritance chain is drawn in red.
 
 As you may see `Function` and `Object` are both functions, thus, they both have `prototype` property, which holds  reference to respective `prototype` object.
 
-`Function` and `Object` are both functions, thus their `__proto__` property, refers to `Function.prototype`, which itself has `__proto__` property referencing to `Object.prototype`, and forming `prototypal inheritance chain`
+`Function` and `Object` are both functions, thus their `__proto__` property, refers to `Function.prototype`, which itself has `__proto__` property referencing to `Object.prototype`.
 
 Both `prototype` and `__proto__` properties of a `Function` refer to the same `Function.prototype` object, which is an exclusive situation, existing only for built-in `Function` constructor.
 
@@ -243,12 +243,12 @@ Duck.prototype.quack = function (){
 // Child
 var TalkingDuck = function (name){
   // Call parent constructor
-  Duck.call(this, name);
+  Duck.call(this, name); //This is often forgotten
 }
 
 // Inheritance
 TalkingDuck.prototype = Object.create(Duck.prototype);
-TalkingDuck.prototype.constructor = TalkingDuck;
+TalkingDuck.prototype.constructor = TalkingDuck; //This is often forgotten
 
 // Method overload
 TalkingDuck.prototype.quack = function (){
@@ -258,6 +258,7 @@ TalkingDuck.prototype.quack = function (){
 
 // Instantiation
 var donald = new TalkingDuck("Donald");
+donald.quack(); // "Donald Duck: Quack-quack! My name is Donald"
 ```
 
 ![alt JavaScript classical OOP](./images/oop.png "JavaScript classical OOP")
@@ -265,7 +266,7 @@ var donald = new TalkingDuck("Donald");
 Prototype chain of `donald` is `donald -> TalkingDuck.prototype -> Duck.prototype -> Object.prototype`. `Function.prototype` does not taking part in this chain, since `donald` not a function.
 ```javascript
 console.log(donald.__proto__ === TalkingDuck.prototype); // true
-console.log(TalkingDuck.prototype.__proto__ === Duck.prototype); // true
+console.log(TalkingDuck.prototype.__proto__ === Duck.prototype); // true, result of invoking Object.create()
 console.log(Duck.prototype.__proto__ === Object.prototype); // true
 console.log(donald.quack === TalkingDuck.prototype.quack); // true, method found by prototype chain
 ```
