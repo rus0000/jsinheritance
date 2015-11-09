@@ -1,17 +1,20 @@
 #  JavaScript prototype-based inheritance
 
-This post is actual for ECMA-262 5th edition called ECMAScript 5 (ES5) and ECMA-262 6th edition called ECMAScript 2015 (ES6)
+This post is actual only for: 
+* ECMA-262 5th edition called ECMAScript 5 (ES5) 
+* ECMA-262 6th edition called ECMAScript 2015 (ES6)
+
 ## Motivation
 A lot of incomplete and even wrong info can be found on Internet about JavaScript prototypal inheritance. I will just try to explain it again with help of diagrams.
 
-JavaScript inheritance understanding is important even if you are not going to use JavaScript OOP patterns, since many of built-in functionality based on inheritance.
+JavaScript inheritance understanding is important even if you are not going to use JavaScript OOP patterns, since many of language built-in functionality based on inheritance.
 
 Diagrams notation:
 * Blocks are JavaScript objects
 * Title of the block denotes an accessor to that object
 * All other sections in a block are properties of this object
 * Arrows are references, with meaning, that given property holds reference to a pointed object. Source of arrow is important, it identifies property, but end is not, it is always points to another object
-* Prototype chain, which is used by JS inheritance system is colored in red
+* Prototype chain, which is used by JavaScript inheritance system is colored in red
 * Built-in porperties, some times, are not listed and shortened to `<built-ins>`
 
 ## TL;DR
@@ -32,9 +35,16 @@ Below is a more detailed explanation.
 * Object property can hold a value or reference to another object or function
 * Functions are also objects, but of special type
 * There is no `classes` and no `constructors` in a language
-* Every function can be invoked as a constructor, but this doesn't mean it *should* be invoked as a constructor
+* Any function can be invoked as a constructor, but this doesn't mean it *should* be invoked as a constructor
 * Functions, which are intended to be used as constructors, just called `constructor functions`. Tey have to be invoked with a `new` keyword to construct a new object
 * By convention, constructor functions are named with `PascalCase`, all other functions are named with `camelCase`
+* Function in JavaScript is a main force. It can be used as:
+  * a regular function
+  * an object, because it is object
+  * a constructor
+  * a name space
+  * a closure to capture context
+  * ... and hundreds of other applications
 
 ### Advanced part
 #### Functions
@@ -44,7 +54,10 @@ Below is a more detailed explanation.
   * That happens **before** any code execution even begins, just after code parsing
 * `function` object can be accessed just using function name without parenthesis, for example `myFunction`
 * `prototype` object can be accessed using `prototype` property of `function` object, for example `myFunction.prototype`
-* `prototype` object is used by JavaScript, when function is invoked as a constructor (with `new` keyword) to initialize newly created object `__proto__` property
+* `prototype` object is used by JavaScript, when function is invoked as a `constructor` (with `new` keyword) to initialize newly created object `__proto__` property
+* `prototype` object of `constructor function` holds what is usually stored in `class` definition in classical OOP languages like Java and C++.
+* `constructor function` and its `prototype` object are always come togehter
+* `prototype` object does not used at all, if function is not intended to be used as a constructor
 
 #### Objects
 * Every object has a built-in `__proto__` property
@@ -58,11 +71,11 @@ Below is a more detailed explanation.
 * When JavaScript runtime looks for a property, with a given name, on an object, it first examines object itself, and then all objects down its prototype chain
 
 ## Built-in constructor functions
-Here is a list of most popular JavaScript built-in constructors. They are constructors, not just objects - this is important!
+This is a list of most popular JavaScript built-in constructors. They are constructors, not just functions, objects or namespaces - this is **important!**
 * Array
 * Boolean
 * Date
-* Error
+* Error, and its derrivatives
 * Function
 * Math
 * Number
@@ -77,7 +90,7 @@ Most confusing, of course, are `Function` and `Object`. Technically, they both a
 ## "Function" and "Object" terms mess
 Close your eyes and take it as given.
 
-JavaScript authors have named a function, with the name `Object()`. Then, they have made another function in the system, with the name `Function()`. And then, they have made technically every function in the system to be an object.
+JavaScript authors have named a function, with the name `Object()`. Then, they have made another function in the system, with the name `Function()`! And then, they have made technically every function in the system to be an object!
 
 Of course, this is confusing. But, only for the first time. Then, you get used.
 
@@ -85,7 +98,9 @@ Speaker always need to be precisely clear, what he is talking about.
 
 Meanings of term "object":
 * Built-in `Object` constructor
-* Any JavaScript object in the system's memory
+* Exact JavaScript object in the system's memory
+* A `constructor` with its `prototype`
+  * The problem here in the fact, that there are no `classes` in JavaScript and developers often call it `object`, since it technically object. Better not to use terms `class`, `type`, `object`, `object type` and use only terms `constructor` or `constructor function`
 * JSON object
   * JSON stands for "JavaScript Object Notation"".
   * Typical misuse and misunderstanding is, that JSON is not an object, it is always a `string`, which will become an object in the memory only after parsing
