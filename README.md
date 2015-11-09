@@ -44,7 +44,7 @@ Below is a more detailed explanation.
   * a constructor
   * a name space
   * a closure to capture context
-  * ... and hundreds of other applications
+  * ... and hundreds of other usages
 
 ### Advanced part
 #### Functions
