@@ -230,7 +230,7 @@ var bar = new Bar();
 
 ## Classical JavaScript inheritance and OOP
 ```javascript
-// Parent
+// Parent constructor
 var Duck = function (name){
   this.name = name;
 };
@@ -240,7 +240,7 @@ Duck.prototype.quack = function (){
   return this.name + " Duck: Quack-quack!";
 };
 
-// Child
+// Child constructor
 var TalkingDuck = function (name){
   // Call parent constructor
   Duck.call(this, name); // This is often forgotten
@@ -256,7 +256,7 @@ TalkingDuck.prototype.quack = function (){
   return Duck.prototype.quack.call(this) + " My name is " + this.name;
 };
 
-// Instantiation
+// Object instantiation
 var donald = new TalkingDuck("Donald");
 donald.quack(); // "Donald Duck: Quack-quack! My name is Donald"
 ```
