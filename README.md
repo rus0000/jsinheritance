@@ -54,8 +54,8 @@ Below is a more detailed explanation.
   * That happens **before** any code execution even begins, just after code parsing
 * `function` object can be accessed just using function name without parenthesis, for example `myFunction`
 * `prototype` object can be accessed using `prototype` property of `function` object, for example `myFunction.prototype`
-* `prototype` object is used by JavaScript, when function is invoked as a `constructor` (with `new` keyword) to initialize newly created object `__proto__` property
-* `prototype` object of `constructor function` holds what is usually stored in `class` definition in classical OOP languages like Java and C++.
+* `prototype` object is used by JavaScript, when function is invoked as a `constructor` (with `new` keyword) to initialize newly constructed object `__proto__` property
+* `prototype` object of `constructor function` holds what is usually stored in `class` definition in classical OOP languages like Java and C++
 * `constructor function` and its `prototype` object are always come togehter
 * `prototype` object does not used at all, if function is not intended to be used as a constructor
 
@@ -98,9 +98,9 @@ Speaker always need to be precisely clear, what he is talking about.
 
 Meanings of term "object":
 * Built-in `Object` constructor
-* Exact JavaScript object in the system's memory
+* Specific JavaScript object, referenced by some access path
 * A `constructor` with its `prototype`
-  * The problem here in the fact, that there are no `classes` in JavaScript and developers often call it `object`, since it technically object. Better not to use terms `class`, `type`, `object`, `object type` and use only terms `constructor` or `constructor function`
+  * The problem here in the fact, that we have no `classes`, and JavaScript developers often call it `object` but with meaning `type`. Better not to use terms `class`, `type`, `object`, `object type`, but  use only terms `constructor` or `constructor function`
 * JSON object
   * JSON stands for "JavaScript Object Notation"".
   * Typical misuse and misunderstanding is, that JSON is not an object, it is always a `string`, which will become an object in the memory only after parsing
@@ -111,12 +111,11 @@ Meanings of term "object":
 
 Meanings of term "function":
 * Built-in `Function` constructor
-* Any JavaScript function in the system's memory
-* Any function declaration or function expression in a source code
-  * This will become a *real* function only after parsing
+* Specific named JavaScript function, referenced by name created with `function declaration`
+* Specific anonymous JavaScript function, referenced by some access path
 
 ## Function and Object constructors' relation
-Relation between `Function` and `Object` constructors is very important, since it plays very important role in JavaScript inheritance.
+Relation between `Function` and `Object` constructors is very important. It plays very important role in JavaScript inheritance.
 
 To summarize:
 * Every function in JS is an object, more exactly - two objects: function itself and its prototype
@@ -129,11 +128,11 @@ To summarize:
 
 The prototypal inheritance chain is drawn in red.
 
-As you may see `Function` and `Object` are both functions, thus they both have a `prototype` property, which holds a reference to another object, which by convention is called "constructor prototype".
+As you may see `Function` and `Object` are both functions, thus, they both have `prototype` property, which holds  reference to respective `prototype` object.
 
-`Function` and `Object` are both functions, thus their `__proto__` property, refers to `Function.prototype`, which itself has `__proto__` property referencing to `Object.prototype` and forming `prototypal inheritance chain`
+`Function` and `Object` are both functions, thus their `__proto__` property, refers to `Function.prototype`, which itself has `__proto__` property referencing to `Object.prototype`, and forming `prototypal inheritance chain`
 
-Both `prototype` and `__proto__` properties of a `Function` refer to the same `Function.prototype` object, which is an exclusive situation only for built-in `Function` constructor.
+Both `prototype` and `__proto__` properties of a `Function` refer to the same `Function.prototype` object, which is an exclusive situation, existing only for built-in `Function` constructor.
 
 ## "Prototype" term mess
 When one says word "prototype", it immediately starts real mess in heads of his listeners. Speaker always need to be precisely clear, what he is talking about.
@@ -141,7 +140,7 @@ When one says word "prototype", it immediately starts real mess in heads of his 
 Meanings of term "prototype":
 * A prototype of a given object
   * Its parent
-  * Accessible with `someObject.__proto__` property
+  * Accessible with `someObject.__proto__` property, not `prototype` property
 * A `prototype` object of a given function, especially a constructor function
   * Accessible with `SomeConstructor.prototype` property
 * A built-in `Function.prototype` object
@@ -150,12 +149,12 @@ Meanings of term "prototype":
 
 To summarize:
 * Only a function may have `prototype` property
-* Every function has `prototype` property
-* `prototype` property of a function holds reference to an auxiliary object, which is used only when this function is invoked as a constructor, with `new` keyword, and completely ignored for all other regular functions
-* Any object may have prototype chain
+* Any function has `prototype` property
+* `prototype` property of a function holds reference to an auxiliary object, which is used only, when the function is invoked as a constructor, with `new` keyword, and completely ignored for all other regular functions
+* Any object have prototype chain
 * **Prototype chain is built using `__proto__` property, not `prototype` property**
-* Functions are also objects, and thus have `__proto__` property, typically referencing to `Function.prototype` built-in object. Usually there is no chaining at all, just direct reference to `Function.prototype`
-* All prototype chains typically ends with `Object.prototype`
+* Functions are also objects, and thus have `__proto__` property, referencing to `Function.prototype` built-in object.
+* All prototype chains ends with `Object.prototype`
 * `Object.prototype.__proto__` holds `null`. This is real end of prototype chain.
 
 ## Function in JavaScript
