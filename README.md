@@ -306,6 +306,8 @@ console.log(donald.__proto__ === TalkingDuck.prototype); // true
 console.log(TalkingDuck.prototype.__proto__ === Duck.prototype); // true, result of invoking Object.create()
 console.log(Duck.prototype.__proto__ === Object.prototype); // true
 console.log(donald.quack === TalkingDuck.prototype.quack); // true, method found by prototype chain
+console.log(donald instanceof TalkingDuck); // true
+console.log(donald instanceof Duck); // true
 ```
 
 ## Prototype pollution
