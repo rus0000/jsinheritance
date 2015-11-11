@@ -55,7 +55,7 @@ Below is a more detailed explanation.
 * `function` object can be accessed just using function name without parenthesis, for example `myFunction`
 * `prototype` object can be accessed using `prototype` property of `function` object, for example `myFunction.prototype`
 * `prototype` object is used by JavaScript, when function is invoked as a `constructor` (with `new` keyword) to initialize newly constructed object `__proto__` property
-* `prototype` object of `constructor function` holds what is usually stored in `class` definition in classical OOP languages like Java and C++
+* `prototype` object of `constructor function` is reminiscent of what is usually stored in `class` definition, in classical OOP languages like Java and C++
 * `constructor function` and its `prototype` object are always come togehter
 * `prototype` object does not used at all, if function is not intended to be used as a constructor
 
