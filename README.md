@@ -24,6 +24,7 @@ This post is all about these diagrams.
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/foo.png" target="_blank"><img src="./images/foo.png" width="233" height="154" alt="Function in JavaScript" title="Function in JavaScript"></a>
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/simple-object.png" target="_blank"><img src="./images/simple-object.png"  width="233" height="154" alt="Creating simple objects with inheritance" title="Creating simple objects with inheritance"></a>
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/bar.png" target="_blank"><img src="./images/bar.png" width="233" height="154" alt="Creating an object with constructor function" title="Creating an object with constructor function"></a>
+<a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/static.png" target="_blank"><img src="./images/static.png" width="233" height="154" alt="JavaScript static method" title="JavaScript static method"></a>
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/oop.png" target="_blank"><img src="./images/oop.png" width="233" height="154" alt="Classical JavaScript inheritance and OOP" title="Classical JavaScript inheritance and OOP"></a>
 
 Below is a more detailed explanation.
