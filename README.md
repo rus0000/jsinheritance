@@ -18,7 +18,7 @@ Diagrams notation:
 * Built-in porperties, some times, are not listed and shortened to `<built-ins>`
 
 ## TL;DR
-My post is all about these diagrams.
+This post is all about these diagrams.
 
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/Function-Object.png" target="_blank"><img src="./images/Function-Object.png" width="233" height="154" alt="Function - Object relationship" title="Function - Object relationship"></a>
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/foo.png" target="_blank"><img src="./images/foo.png" width="233" height="154" alt="Function in JavaScript" title="Function in JavaScript"></a>
@@ -34,7 +34,7 @@ Below is a more detailed explanation.
 * There are no `methods` or `members` in an object, there are only `properties`
 * Object property can hold a value or reference to another object or function
 * Functions are also objects, but of special type
-* There is no `classes` and no `constructors` in a language
+* There is no `classes` and no `constructors` in a language. ES6 `class` is just a sintax sugar
 * Any function can be invoked as a constructor, but this doesn't mean it *should* be invoked as a constructor
 * Functions, which are intended to be used as constructors, just called `constructor functions`. Tey have to be invoked with a `new` keyword to construct a new object
 * By convention, constructor functions are named with `PascalCase`, all other functions are named with `camelCase`
@@ -63,8 +63,8 @@ Below is a more detailed explanation.
 * Every object has a built-in `__proto__` property
 * `__proto__` property correspond to internal, hidden `[[Prototype]]` property of the object
 * `function` object and its `prototype` object, both, also have `__proto__` property
-* `__proto__` property accessors standardized only in ES6. In ES5, standard way to access value this property is `Object.getPrototypeOf()` method
-* In ES6 `__proto__` property can be set, it just holds reference to another object
+* `__proto__` property as an accessor standardized only in ES6. In ES5, existance of `__proto__` property depends on implementation. In ES5 standard way to access value of `[[Prototype]]` property is `Object.getPrototypeOf()` method
+* In ES6 `__proto__` property can be set, it just holds reference to another object. In ES6 there is also a `Object.setPrototypeOf()` method
 * It is possible to create object without `__proto__` property using `var obj = Object.create(null)`
 * Object, which is referenced by `__proto__` property of a given object, is called its `parent`. That `parent` object can also have `__proto__` property to its own `parent`, thus forming `prototype chain`
 * `prototype chain` of objects or `prototypal inheritance chain` is a way, how **inheritance** is implemented in JavaScript
@@ -298,6 +298,7 @@ Collection.prototype.add = function (x){
 };
 ```
 ## Reading
+* [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 * [Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 * [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * [Object.prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
