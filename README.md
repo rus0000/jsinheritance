@@ -220,6 +220,9 @@ Bar.prototype.writeA = function (a) {
 }
 
 var bar = new Bar();
+bar.readA(); // 10
+bar.writeA(20);
+bar.readA(); // 20
 ```
 
 ![alt Object creation with constructor function](./images/bar.png "Object creation with constructor function")
@@ -227,6 +230,8 @@ var bar = new Bar();
 `readA` and `writeA` are just regular JS functions with similar references to `Function` and `Object` as `Bar` function itself. These references are not shown for clarity. The only important difference with `Bar` is, that their prototypes are not of any use.
 
 `bar` object has its own property `a`, because this property created every time constructor is invoked. This behavior allows to produce different objects with their own property `a`, but inheriting "methods" from `Bar` prototype.
+
+`bar` object has inherited methods `readA` and `writeA` from its parent object, which is `Bar.prototype`.
 
 ## Static methods
 There is no such thing like `static method` in JavaScript spec at all, but this design pattern can easily be implemented by putting properties on a `constructor function` object itself, instead of its `prototype` object.
