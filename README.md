@@ -271,6 +271,9 @@ console.log(Duck.prototype.__proto__ === Object.prototype); // true
 console.log(donald.quack === TalkingDuck.prototype.quack); // true, method found by prototype chain
 ```
 
+## Static methods
+There is no such a thing like `static method` in JavaScript spec at all, but this design pattern can easily be implemented by putting properties on a `constructor function` object itself, instead of its `prototype` object.
+
 ## Prototype pollution
 Prototype pollution is changing properties of objects in a prototype chain, affecting all other existing instances.
 The rule of thumb, is not to put properties on a constructor prototype object. Only initialize them inside constructor function body. Constructor prototype should have only methods.
