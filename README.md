@@ -172,7 +172,7 @@ What we can se here:
 
 What we don't see is that `foo` itself has internal `[[Code]]` property, which cannot be accessed but is used when we invoke it with `foo()`.
 
-When you use `foo.someMethod()`, all built-in methods come from `Function.prototype` and down the chain from `Object.prototype`.
+When you use `foo.someMethod()`, all built-in methods come from `Function.prototype` and down the chain from `Object.prototype`. But `foo.someMethod()` never comes from `foo.prototype`.
 
 `foo.prototype` typically does not used at all, if function is not a constructor, and vice versa, is used in the case of a constructor function.
 
