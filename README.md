@@ -228,6 +228,36 @@ var bar = new Bar();
 
 `bar` object has its own property `a`, because this property created every time constructor is invoked. This behavior allows to produce different objects with their own property `a`, but inheriting "methods" from `Bar` prototype.
 
+## Static methods
+There is no such thing like `static method` in JavaScript spec at all, but this design pattern can easily be implemented by putting properties on a `constructor function` object itself, instead of its `prototype` object.
+
+```javascript
+function Bar() {
+  this.a = 10;
+}
+
+Bar.staticMethod = function () {
+  return "I am static";
+}
+
+Bar.prototype.readA = function () {
+  return this.a;
+}
+
+Bar.prototype.writeA = function (a) {
+  this.a = a;
+}
+
+var bar = new Bar();
+
+console.log(bar.staticMethod); // undefined
+Bar.staticMethod(); // "I am static"
+```
+
+![alt JavaScript static method](./images/static.png "JavaScript static method")
+
+A lot of useful design patterns in JavaScript are implemented putting methods on a `constructor function` object, for example `factory` functions. Such a `constructor` can be used as a `namespace` or `singleton`.
+
 ## Classical JavaScript inheritance and OOP
 ```javascript
 // Parent constructor
@@ -270,9 +300,6 @@ console.log(TalkingDuck.prototype.__proto__ === Duck.prototype); // true, result
 console.log(Duck.prototype.__proto__ === Object.prototype); // true
 console.log(donald.quack === TalkingDuck.prototype.quack); // true, method found by prototype chain
 ```
-
-## Static methods
-There is no such a thing like `static method` in JavaScript spec at all, but this design pattern can easily be implemented by putting properties on a `constructor function` object itself, instead of its `prototype` object.
 
 ## Prototype pollution
 Prototype pollution is changing properties of objects in a prototype chain, affecting all other existing instances.
