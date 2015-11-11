@@ -256,6 +256,8 @@ Bar.staticMethod(); // "I am static"
 
 ![alt JavaScript static method](./images/static.png "JavaScript static method")
 
+Static methods of constructor are not accessible on objects, created with this consrtuctor, they are available on a constructor itself.
+
 A lot of useful design patterns in JavaScript are implemented putting methods on a `constructor function` object, for example `factory` functions. Such a `constructor` can be used as a `namespace` or `singleton`.
 
 ## Classical JavaScript inheritance and OOP
