@@ -64,7 +64,7 @@ Below is a more detailed explanation.
 * Every object has a built-in `__proto__` property
 * `__proto__` property correspond to internal, hidden `[[Prototype]]` property of the object
 * `function` object and its `prototype` object, **both**, also have `__proto__` property
-* `__proto__` property as an accessor standardized only in ES6. In ES5, existance of `__proto__` property depends on implementation. In ES5 standard way to access value of `[[Prototype]]` property is `Object.getPrototypeOf()` method
+* `__proto__` property as an accessor, standardized only in ES6. In ES5, existance of `__proto__` property depends on implementation. In ES5 standard way to access value of `[[Prototype]]` property is `Object.getPrototypeOf()` method
 * In ES6 `__proto__` property can be set, it just holds reference to another object. In ES6 there is also a `Object.setPrototypeOf()` method
 * It is possible to create object without `__proto__` property using `var obj = Object.create(null)`
 * Object, which is referenced by `__proto__` property of a given object, is called its `parent`. That `parent` object can also have `__proto__` property to its own `parent`, thus forming `prototype chain`
