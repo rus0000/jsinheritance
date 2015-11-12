@@ -29,7 +29,7 @@ This post is all about these diagrams:
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/static.png" target="_blank"><img src="./images/static.png" width="233" height="154" alt="JavaScript static method" title="JavaScript static method"></a>
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/oop.png" target="_blank"><img src="./images/oop.png" width="233" height="154" alt="Classical JavaScript inheritance and OOP" title="Classical JavaScript inheritance and OOP"></a>
 
-If you understand them completely - you have done. If not - below is a more detailed explanation.
+If you understand them completely - you have done, if not - below is a more detailed explanation.
 
 ## Some JavaScript basics
 ### Basic part
