@@ -11,6 +11,9 @@ A lot of incomplete and even wrong info can be found on Internet about JavaScrip
 
 JavaScript inheritance understanding is important even if you are not going to use JavaScript OOP patterns, since many of language built-in functionality based on inheritance.
 
+I am not advocating of using OOP patterns and "classical"-like inheritance in JavaScript at all. 
+I recommend to use "factory function" pattern insead of a "constructor function" pattern, but first, you need to understand a difference.
+
 Diagrams notation:
 * Blocks are JavaScript objects
 * Title of the block denotes an accessor to that object
