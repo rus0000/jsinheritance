@@ -12,7 +12,7 @@ A lot of incomplete and even wrong info can be found on Internet about JavaScrip
 JavaScript inheritance understanding is important even if you are not going to use JavaScript OOP patterns, since many of language built-in functionality based on inheritance.
 
 I am not advocating of using OOP patterns and "classical"-like inheritance in JavaScript at all. 
-I recommend to use "factory function" pattern insead of a "constructor function" pattern, but first, you need to understand a difference.
+I prefer using "factory" and "mixin" patterns instead of a "constructor" pattern, but to use them, first, you need to understand a difference.
 
 Diagrams notation:
 * Blocks are JavaScript objects
@@ -341,6 +341,11 @@ Collection.prototype.add = function (x){
   this.elements.push(x);
 };
 ```
+
+## Factory functions
+
+## Mixins
+
 ## Reading
 * [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 * [Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
