@@ -32,10 +32,10 @@ Below is a more detailed explanation.
 ## Some JavaScript basics
 ### Basic part
 * In JavaScript we have functions and objects
+* There is no `classes` and no `constructors` in a language. ES6 `class` is only a sintax sugar
 * There are no `methods` or `members` in an object, there are only `properties`
 * Object property can hold a value or reference to another object or function
 * Functions are also objects, but of special type
-* There is no `classes` and no `constructors` in a language. ES6 `class` is just a sintax sugar
 * Any function can be invoked as a constructor, but this doesn't mean it *should* be invoked as a constructor
 * Functions, which are intended to be used as constructors, just called `constructor functions`. Tey have to be invoked with a `new` keyword to construct a new object
 * By convention, constructor functions are named with `PascalCase`, all other functions are named with `camelCase`
