@@ -1,8 +1,10 @@
-#  JavaScript prototype-based inheritance
+#  JavaScript prototype-based inheritance explained
 
 This post is actual only for: 
 * ECMA-262 5th edition called ECMAScript 5 (ES5) 
 * ECMA-262 6th edition called ECMAScript 2015 (ES6)
+
+This is a beginner-level post, just to clarify and visualize JavaScript prototype-based inheritance.
 
 ## Motivation
 A lot of incomplete and even wrong info can be found on Internet about JavaScript prototypal inheritance. I will just try to explain it again with help of diagrams.
