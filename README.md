@@ -20,7 +20,7 @@ Diagrams notation:
 * Built-in porperties, some times, are not listed and shortened to `<built-ins>`
 
 ## TL;DR
-This post is all about these diagrams.
+This post is all about these diagrams:
 
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/Function-Object.png" target="_blank"><img src="./images/Function-Object.png" width="233" height="154" alt="Function - Object relationship" title="Function - Object relationship"></a>
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/foo.png" target="_blank"><img src="./images/foo.png" width="233" height="154" alt="Function in JavaScript" title="Function in JavaScript"></a>
@@ -29,7 +29,7 @@ This post is all about these diagrams.
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/static.png" target="_blank"><img src="./images/static.png" width="233" height="154" alt="JavaScript static method" title="JavaScript static method"></a>
 <a href="https://raw.githubusercontent.com/rus0000/jsinheritance/master/images/oop.png" target="_blank"><img src="./images/oop.png" width="233" height="154" alt="Classical JavaScript inheritance and OOP" title="Classical JavaScript inheritance and OOP"></a>
 
-Below is a more detailed explanation.
+If you understand them completely - you have done. If not - below is a more detailed explanation.
 
 ## Some JavaScript basics
 ### Basic part
