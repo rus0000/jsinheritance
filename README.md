@@ -349,6 +349,11 @@ Collection.prototype.add = function (x){
 ```
 
 ## Factory functions
+Factory function in JavaScript is not a language feature, it is a pattern. Many patterns in JavaScript are available just because of the power of prototype-based inheritance.
+
+Factory function is very popular, and very powerful JavaScript OOP pattern. There are hundreds of implementations of it, in many libraries and framweorks, and of course, you can create your own.
+
+Factory function pattern is simple, it just allows you create `prototypal inheritance chain`, but without usage of `constructor function`, using `factory function` instead.
 
 ## Mixins
 
