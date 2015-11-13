@@ -332,8 +332,11 @@ Collection.prototype.add = function (x){
   // Each instance adds values to the same array
   this.elements.push(x);
 };
+```
 
-//It should be
+It should be
+
+```javascript
 function Collection(){
   // Each instance gets its own array, - good
   this.elements = [];
