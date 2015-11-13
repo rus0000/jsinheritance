@@ -361,16 +361,19 @@ Node.js `http.createServer` is a typical example of factory function. It returns
 // Load the http module
 var http = require('http');
 
-// server is a new instance of http.Server class
+// Call factory function to construct a new instance
 var server = http.createServer(function (request, response) {
   response.writeHead(200, {"Content-Type": "text/plain"});
   response.end("Hello World\n");
 });
 
+// server is an instance of http.Server class
 console.log(server instanceof http.Server); // true
 
-// Call listen method from http.Server class on server object
+// Call listen method inherited from http.Server class 
 server.listen(8000);
+
+console.log(server.hasOwnProperty('listen')); // false
 ```
 ## Mixins
 Mixin is another JavaScript pattern. This is also kind of inheritance but not using `prototypal inheritance chain`.
