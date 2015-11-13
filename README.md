@@ -9,7 +9,7 @@ This is a beginner-level post, just to clarify and visualize JavaScript prototyp
 ## Motivation
 A lot of incomplete and even wrong info can be found on Internet about JavaScript prototypal inheritance. I will just try to explain it again with help of diagrams.
 
-JavaScript inheritance understanding is important even if you are not going to use JavaScript OOP patterns, since many of language built-in functionality based on inheritance.
+JavaScript inheritance understanding is important, even if you are not going to use JavaScript OOP patterns, since many of language built-in functionality based on inheritance.
 
 I am not advocating of using OOP patterns and "classical"-like inheritance in JavaScript at all. 
 I personally prefer using "factory" and "mixin" instead of a "constructor" pattern. But this post is not about patterns, it is only about JavaScript prototype-based inheritance *mechanics* visualization.
