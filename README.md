@@ -12,7 +12,7 @@ A lot of incomplete and even wrong info can be found on Internet about JavaScrip
 JavaScript inheritance understanding is important even if you are not going to use JavaScript OOP patterns, since many of language built-in functionality based on inheritance.
 
 I am not advocating of using OOP patterns and "classical"-like inheritance in JavaScript at all. 
-I prefer using "factory" and "mixin" patterns instead of a "constructor" pattern, but to use them, first, you need to understand a difference.
+I personally prefer using "factory" and "mixin" instead of a "constructor" pattern, but this post is not about patterns, it is more about internal Javascript inheritance *mechanics* visualization.
 
 Diagrams notation:
 * Blocks are JavaScript objects
