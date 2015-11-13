@@ -120,7 +120,7 @@ Meanings of term "function":
 * Specific named JavaScript function, referenced by name created with `function declaration`
 * Specific anonymous JavaScript function, referenced by some access path
 
-## Function and Object constructors' relation
+## Function and Object constructors relation
 Relation between `Function` and `Object` constructors is very important. It plays major role in JavaScript inheritance.
 
 To summarize:
