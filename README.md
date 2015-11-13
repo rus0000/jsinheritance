@@ -37,7 +37,7 @@ If you understand them completely - you have done, if not - below is a more deta
 ## Some JavaScript basics
 ### Basic part
 * In JavaScript we have functions and objects
-* There is no `classes` and no `constructors` in a language. ES6 `class` is only a sintax sugar
+* There is no `classes` and no `constructors` in a language. ES6 `class` is only a syntactical sugar
 * There are no `methods` or `members` in an object, there are only `properties`
 * Object property can hold a value or reference to another object or function
 * Functions are also objects, but of special type
