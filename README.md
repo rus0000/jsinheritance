@@ -14,7 +14,7 @@ JavaScript inheritance understanding is important, even if you are not going to 
 I am not advocating of using OOP patterns and "classical"-like inheritance in JavaScript at all. 
 I personally prefer using "factory" and "mixin" instead of a "constructor" pattern. But this post is not about patterns, it is only about JavaScript prototype-based inheritance *mechanics* visualization.
 
-Diagrams notation:
+**Diagrams notation:**
 * Blocks are JavaScript objects
 * Title of the block denotes an accessor to that object
 * All other sections in a block are properties of this object
