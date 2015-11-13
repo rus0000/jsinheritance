@@ -146,7 +146,7 @@ When one says word "prototype", it immediately starts real mess in heads of his 
 Meanings of term "prototype":
 * A prototype of a given object
   * Its parent
-  * Accessible with `someObject.__proto__` property, not `prototype` property. 
+  * Accessible with `someObject.__proto__` property, not `prototype` property
   * The is most confusing part is:
     * Parent of a `someObject` object, referenced by `someObject.__proto__` property, is commonly called its **prototype**
 * A `prototype` object of a given function, especially a constructor function
