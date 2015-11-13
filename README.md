@@ -351,9 +351,26 @@ Collection.prototype.add = function (x){
 ## Factory functions
 Factory function in JavaScript is not a language feature, it is a pattern. Many patterns in JavaScript are available just because of the power of prototype-based inheritance.
 
-Factory function is very popular, and very powerful JavaScript OOP pattern. There are hundreds of implementations of it in many libraries and framweorks, and of course, you can create your own.
+Factory function is very popular and powerful JavaScript OOP pattern. There are hundreds of implementations of it in many libraries and framweorks, and of course, you can create your own.
 
 Factory function pattern is simple, it allows you create JavaScript objects and establish `prototypal inheritance chain`, but without usage of `constructor function`, using `factory function` instead.
+
+Node.js `http.createServer` is a typical example of factory function. It returns a new instance of `http.Server` class. New object is created wthout using `constructor function` and `new` keyword.
+
+```javascript
+// Load the http module
+var http = require('http');
+
+// server is a new instance of http.Server class
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.end("Hello World\n");
+});
+
+// Call listen method from http.Server class on server object
+server.listen(8000);
+```
+Factory functions can use constructors behind the scenes.
 
 ## Mixins
 Mixin is another JavaScript pattern. This is also kind of inheritance but not using `prototypal inheritance chain`.
