@@ -367,6 +367,8 @@ var server = http.createServer(function (request, response) {
   response.end("Hello World\n");
 });
 
+console.log(server instanceof http.Server); // true
+
 // Call listen method from http.Server class on server object
 server.listen(8000);
 ```
