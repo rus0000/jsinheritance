@@ -385,7 +385,7 @@ Main goals of using mixins are `multiple inheritance` and `performance boost`.
 
 Mixin is a function, which mixes behaviours from one or more `donor` objects to `target` object. Technically, it consists of copying all methods and properties from donors to target object, allowing it to achieve similar behaviour.
 
-The most important part here, is that methods, copied from donors are not copied or cloned itself. The mixin function only copies references to them from donor to target. All resulting mixed instances refer to the same set of functions.
+The most important part here, is that methods, copied from donors are not copied or cloned itself. They are not duplicated. The mixin function only copies references to them. All resulting mixed instances refer to the same set of functions.
 
 Multiple inheritance is achieved by mixing several objects into one.
 
