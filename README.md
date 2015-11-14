@@ -322,6 +322,7 @@ console.log(donald instanceof Duck); // true
 Prototype pollution is changing properties of objects in a prototype chain, affecting all other existing instances.
 The rule of thumb, is not to put properties on a constructor prototype object. Only initialize them inside constructor function body. Constructor prototype should have only methods.
 
+**Wrong!**
 ```javascript
 function Collection(){}
 
@@ -375,10 +376,24 @@ server.listen(8000);
 
 console.log(server.hasOwnProperty('listen')); // false
 ```
+Factory function can result in prototype chain similar to what we get using constructors. It is also can be implemented without usage of constructors, replacing them with some sort of `init` function, but still resulting in a prototype chain of objects. In later case `instanceof` operator will not work, and developer may need to use `Duck typing` to detect object type.
+
 ## Mixins
-Mixin is another JavaScript pattern. This is also kind of inheritance but not using `prototypal inheritance chain`.
+Mixin is another popular and powerful JavaScript pattern. It is also kind of inheritance but not using `prototypal inheritance chain`.
 
+Main goals of using mixins are `multiple inheritance` and `performance boost`.
 
+Mixin is a function, which mixes behaviours from one or more `donor` objects to `target` object. Technically, it consists of copying all methods and properties from donors to target object, allowing it to achieve similar behaviour.
+
+The most important part here is that methods, copied from donors are not copied or cloned at all. The mixin function only copies references to them from donor to target. All resulting mixed instances refer to the same set of functions.
+
+Multiple inheritance is achieved by mixing several objects into one.
+
+Performance boost is achieved by the fact, that prototype chain lookups in JavaScript are expensive, and when all methods from parents reside directly on a child, it accelerates performance.
+
+Mixin function holds intact `__proto__` property of target object.
+
+`instanceof` operator, as well, will not work.
 
 ## Reading
 * [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
