@@ -162,9 +162,9 @@ To summarize:
 * `prototype` property of a function holds reference to an auxiliary object, which is used only, when the function is invoked as a constructor, with `new` keyword, and completely ignored for all other regular functions
 * Any object has prototype chain
 * **Prototype chain is built using `__proto__` property, not `prototype` property**
-* Functions are also objects, and thus have `__proto__` property, referencing to `Function.prototype` built-in object.
+* Functions are also objects, and thus have `__proto__` property, referencing to `Function.prototype` built-in object
 * All prototype chains ends with `Object.prototype`
-* `Object.prototype.__proto__` holds `null`. This is real end of prototype chain.
+* `Object.prototype.__proto__` holds `null`. This is real end of prototype chain
 
 ## Function in JavaScript
 Having simple function declaration, we get following inheritance.
