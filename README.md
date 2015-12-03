@@ -264,7 +264,7 @@ Bar.prototype.writeA = function (a) {
 var bar = new Bar();
 
 console.log(bar.staticMethod); // undefined
-Bar.staticMethod(); // "I am static"
+console.log(Bar.staticMethod()); // "I am static"
 ```
 
 ![alt JavaScript static method](./images/static.png "JavaScript static method")
