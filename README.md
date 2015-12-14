@@ -402,4 +402,4 @@ Mixin function holds intact `__proto__` property of target object.
 * [Dr. Axel Rauschmayer blog](http://www.2ality.com/)
 * [Juriy Zaytsev (kangax) blog](http://perfectionkills.com/)
 * [Dmitry Soshnikov blog](http://dmitrysoshnikov.com/ecmascript/javascript-the-core/)
-* [Learning JavaScript Design Patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+* [Addy Osmani Learning JavaScript Design Patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
