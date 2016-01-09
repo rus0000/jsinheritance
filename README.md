@@ -219,12 +219,12 @@ Even if prototype chain of `foo` and `bar` looks very simplistic, we can note, t
 Now, let's declare a simple constructor function and create an object instance using it.
 ```javascript
 function Bar() {
-  //this will point to newly created object
+  // "this" will point to newly created object
   this.a = 10;
 }
 
 Bar.prototype.readA = function () {
-  //this will point to the object, in context of which, method will be invoked
+  // "this" will point to the object, in context of which, method will be invoked
   return this.a;
 }
 
@@ -259,6 +259,7 @@ function Bar() {
 }
 
 Bar.staticMethod = function () {
+  // can not use "this" here
   return "I am static";
 }
 
@@ -274,6 +275,7 @@ var bar = new Bar();
 
 console.log(bar.staticMethod); // undefined, method can not be invoked on instance
 console.log(Bar.staticMethod()); // "I am static"
+console.log(bar.constructor.staticMethod()); // "I am static", method available on instance through inherited constructor property
 ```
 
 ![alt JavaScript static method](./images/static.png "JavaScript static method")
