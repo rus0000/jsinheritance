@@ -245,7 +245,7 @@ console.log(bar.a); // 20 - Reading own porperty
 
 ![alt Object creation with constructor function](./images/bar.png "Object creation with constructor function")
 
-`readA` and `writeA` are just regular JS functions with similar references to `Function` and `Object` as `Bar` function itself. These references are not shown for clarity. The only important difference with `Bar` is, that their prototypes are not of any use.
+`readA` and `writeA` are just regular JS functions with similar references to `Function` and `Object` as `Bar` function itself. These references are not shown for clarity. Important difference between them and `Bar` function is, that their prototypes are not of any use.
 
 `bar` object has its own property `a`, because this property created every time `Bar` constructor is invoked. This behavior allows to produce different objects with their own property `a`, but inheriting "methods" from `Bar.prototype`.
 
