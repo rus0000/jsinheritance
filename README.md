@@ -328,7 +328,8 @@ console.log(donald.name); // "Donald", reading own property
 ![alt JavaScript classical OOP](./images/oop.png "JavaScript classical OOP")
 
 Prototype chain of `donald` is `donald -> TalkingDuck.prototype -> Duck.prototype -> Object.prototype`. `Function.prototype` does not taking part in this chain, since `donald` is not a function.
-`name` is own property of `donald`, though it is created with `Duck` constructor. This is because `Duck` constructor is invoked with `Duck.call(this, name)`, where `this` points to newly created object inside `TalkingDuck` constructor and then passed down as an invocation context to `Duck` constructor. See [MDN call() reference](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
+
+Note that `name` is own property of `donald`, though it is created with `Duck` constructor. This is because `Duck` constructor is invoked with `Duck.call(this, name)`, where `this` points to newly created object inside `TalkingDuck` constructor and then passed down as an invocation context to `Duck` constructor. See [MDN call() reference](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
 
 ## Prototype pollution
 Prototype pollution is changing properties of objects in a prototype chain, affecting all other existing instances.
