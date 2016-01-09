@@ -287,18 +287,18 @@ A lot of useful design patterns in JavaScript are implemented putting methods on
 ## Classical JavaScript inheritance and OOP
 ```javascript
 // Parent constructor
-var Duck = function (name){
+var Duck = function (name) {
   this.name = name;
 };
 
 // Parent method
-Duck.prototype.quack = function (){
+Duck.prototype.quack = function () {
   return this.name + " Duck: Quack-quack!";
 };
 
 // Child constructor
-var TalkingDuck = function (name){
-  // Call parent constructor
+var TalkingDuck = function (name) {
+  // Call parent constructor with proper arguments
   Duck.call(this, name); // This is often forgotten
 }
 
@@ -307,20 +307,15 @@ TalkingDuck.prototype = Object.create(Duck.prototype);
 TalkingDuck.prototype.constructor = TalkingDuck; // This is often forgotten
 
 // Method overload
-TalkingDuck.prototype.quack = function (){
+TalkingDuck.prototype.quack = function () {
   // Call parent method
   return Duck.prototype.quack.call(this) + " My name is " + this.name;
 };
 
 // Object instantiation
 var donald = new TalkingDuck("Donald");
-donald.quack(); // "Donald Duck: Quack-quack! My name is Donald"
-```
+console.log(donald.quack()); // "Donald Duck: Quack-quack! My name is Donald"
 
-![alt JavaScript classical OOP](./images/oop.png "JavaScript classical OOP")
-
-Prototype chain of `donald` is `donald -> TalkingDuck.prototype -> Duck.prototype -> Object.prototype`. `Function.prototype` does not taking part in this chain, since `donald` is not a function.
-```javascript
 console.log(donald.__proto__ === TalkingDuck.prototype); // true
 console.log(TalkingDuck.prototype.__proto__ === Duck.prototype); // true, result of invoking Object.create()
 console.log(Duck.prototype.__proto__ === Object.prototype); // true
@@ -328,6 +323,10 @@ console.log(donald.quack === TalkingDuck.prototype.quack); // true, method found
 console.log(donald instanceof TalkingDuck); // true
 console.log(donald instanceof Duck); // true
 ```
+
+![alt JavaScript classical OOP](./images/oop.png "JavaScript classical OOP")
+
+Prototype chain of `donald` is `donald -> TalkingDuck.prototype -> Duck.prototype -> Object.prototype`. `Function.prototype` does not taking part in this chain, since `donald` is not a function.
 
 ## Prototype pollution
 Prototype pollution is changing properties of objects in a prototype chain, affecting all other existing instances.
@@ -340,7 +339,7 @@ function Collection(){}
 // Shared between instances, - wrong
 Collection.prototype.elements = [];
 
-Collection.prototype.add = function (x){
+Collection.prototype.add = function (x) {
   // Each instance adds values to the same array
   this.elements.push(x);
 };
@@ -355,7 +354,7 @@ function Collection(){
 }
 
 // No changes in code, but result will be different
-Collection.prototype.add = function (x){
+Collection.prototype.add = function (x) {
   this.elements.push(x);
 };
 ```
