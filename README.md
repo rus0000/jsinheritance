@@ -232,6 +232,8 @@ Bar.prototype.writeA = function (a) {
 
 var bar = new Bar();
 
+console.log(bar.constructor === Bar); // true
+console.log(bar instanceof Bar); // true
 console.log(bar.readA()); // 10 - Invoking inherited method
 bar.writeA(20);
 console.log(bar.readA()); // 20
