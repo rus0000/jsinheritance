@@ -217,10 +217,12 @@ Even if prototype chain of `foo` and `bar` looks very simplistic, we can note, t
 Now, let's declare a simple constructor function and create an object instance using it.
 ```javascript
 function Bar() {
+  //this will point to newly created object
   this.a = 10;
 }
 
 Bar.prototype.readA = function () {
+  //this will point to the object, in context of which, method will be invoked
   return this.a;
 }
 
@@ -229,9 +231,11 @@ Bar.prototype.writeA = function (a) {
 }
 
 var bar = new Bar();
-bar.readA(); // 10
+
+console.log(bar.readA()); // 10 - Invoking inherited method
 bar.writeA(20);
-bar.readA(); // 20
+console.log(bar.readA()); // 20
+console.log(bar.a); // 20 - Reading own porperty
 ```
 
 ![alt Object creation with constructor function](./images/bar.png "Object creation with constructor function")
@@ -263,7 +267,7 @@ Bar.prototype.writeA = function (a) {
 
 var bar = new Bar();
 
-console.log(bar.staticMethod); // undefined
+console.log(bar.staticMethod); // undefined, method can not be invoked on instance
 console.log(Bar.staticMethod()); // "I am static"
 ```
 
