@@ -89,7 +89,7 @@ This is a list of most popular JavaScript built-in constructors. They are constr
 * RegExp
 * String
 
-More reading: [Standard built-in objects] (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)
+More reading: [MDN Standard built-in objects] (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)
 
 Most confusing, of course, are `Function` and `Object`. Technically, they both are functions, constructor functions. 
 
@@ -408,10 +408,10 @@ Mixin function holds intact `__proto__` property of target object.
 `instanceof` operator, as well, will not work.
 
 ## Reading
-* [Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
-* [Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
-* [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+* [MDN Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+* [MDN Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+* [MDN Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 * [Dr. Axel Rauschmayer blog](http://www.2ality.com/)
 * [Juriy Zaytsev (kangax) blog](http://perfectionkills.com/)
 * [Dmitry Soshnikov blog](http://dmitrysoshnikov.com/ecmascript/javascript-the-core/)
-* [Addy Osmani Learning JavaScript Design Patterns](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
+* [Addy Osmani "Learning JavaScript Design Patterns"](http://addyosmani.com/resources/essentialjsdesignpatterns/book/)
