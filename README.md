@@ -203,8 +203,8 @@ var bar = Object.create(foo, {
   });
 
 console.log(bar.__proto__ === foo); //true
-console.log(bar.a); //10
-console.log(bar.b); //20
+console.log(bar.a); // 10 - Inherited property
+console.log(bar.b); //20 - Own porperty
 ```
 
 ![alt Simple object creation](./images/simple-object.png "Simple object creation")
