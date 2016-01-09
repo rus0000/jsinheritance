@@ -205,6 +205,8 @@ var bar = Object.create(foo, {
 console.log(bar.__proto__ === foo); //true
 console.log(bar.a); // 10 - Inherited property
 console.log(bar.b); //20 - Own porperty
+console.log(foo instanceof Object); // true, foo inherits from Object
+console.log(bar instanceof Object); // true, bar inherits from Object
 ```
 
 ![alt Simple object creation](./images/simple-object.png "Simple object creation")
