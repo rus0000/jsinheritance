@@ -181,7 +181,7 @@ What we can se here:
 
 What we don't see is that `foo` itself has internal `[[Code]]` property, which cannot be accessed but is used when we invoke it with `foo()`.
 
-When you use `foo.someMethod()`, all built-in methods come from `Function.prototype` and down the chain from `Object.prototype`. But `foo.someMethod()` never comes from `foo.prototype`.
+When you use `foo.someMethod()`, all built-in methods come from `Function.prototype` and down the chain from `Object.prototype`. But `foo.someMethod()` never comes from `foo.prototype`. See [Static methods](https://github.com/rus0000/jsinheritance/blob/master/README.md#static-methods).
 
 `foo.prototype` typically does not used at all, if function is not a constructor, and vice versa, is used in the case of a constructor function.
 
