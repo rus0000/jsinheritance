@@ -224,7 +224,7 @@ function Bar() {
 }
 
 Bar.prototype.readA = function () {
-  // "this" will point to the object, in context of which, method will be invoked
+  // "this" will point to the object, in context of which, method is invoked
   return this.a;
 }
 
