@@ -173,7 +173,7 @@ function foo(){}
 ```
 ![alt Function in Javascript](./images/foo.png "Function in Javascript")
 
-What we can se here:
+What we can see here:
 * function declaration creates two objects: `foo` itself and `foo.prototype`, even if `foo` does not going to be used as constructor function
 * `foo` inherits from `Function.prototype`
 * `foo.prototype` inherits from `Object.prototype`
@@ -232,12 +232,13 @@ Bar.prototype.writeA = function (a) {
   this.a = a;
 }
 
+// Constructor function invocation requires "new" keyword
 var bar = new Bar();
 
 console.log(bar.constructor === Bar); // true
 console.log(bar instanceof Bar); // true
 console.log(bar instanceof Object); // true, bar inherits from Object
-console.log(bar.readA()); // 10 - Invoking inherited method
+console.log(bar.readA()); // 10 - Invoking inherited method in context of "bar" object
 bar.writeA(20);
 console.log(bar.readA()); // 20
 console.log(bar.a); // 20 - Reading own porperty
