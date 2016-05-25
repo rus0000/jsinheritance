@@ -241,7 +241,7 @@ console.log(bar instanceof Object); // true, bar inherits from Object
 console.log(bar.readA()); // 10 - Invoking inherited method in context of "bar" object
 bar.writeA(20);
 console.log(bar.readA()); // 20
-console.log(bar.a); // 20 - Reading own porperty
+console.log(bar.a); // 20 - Reading own porperty of "bar" object
 ```
 
 ![alt Object creation with constructor function](./images/bar.png "Object creation with constructor function")
