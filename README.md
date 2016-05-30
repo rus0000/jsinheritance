@@ -235,7 +235,7 @@ Bar.prototype.writeA = function (a) {
 // Constructor function invocation requires "new" keyword
 var bar = new Bar();
 
-console.log(bar.constructor === Bar); // true
+console.log(bar.constructor === Bar); // true, "constructor" - inherited property
 console.log(bar instanceof Bar); // true
 console.log(bar instanceof Object); // true, bar inherits from Object
 console.log(bar.readA()); // 10 - Invoking inherited method in context of "bar" object
