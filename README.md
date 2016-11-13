@@ -1,17 +1,17 @@
-#  JavaScript prototype-based inheritance visualized 
+#  JavaScript prototype-based inheritance visualized
 
-This post is actual only for: 
-* ECMA-262 5th edition called ECMAScript 5 (ES5) 
+This post is actual only for:
+* ECMA-262 5th edition called ECMAScript 5 (ES5)
 * ECMA-262 6th edition called ECMAScript 2015 (ES6)
 
-This is a beginner-level post, just to clarify and visualize JavaScript prototype-based inheritance.
+This is a beginner-level post to clarify and visualize JavaScript prototype-based inheritance.
 
 ## Motivation
 A lot of incomplete and even wrong info can be found on Internet about JavaScript prototypal inheritance. I will just try to explain it again with help of diagrams.
 
-JavaScript inheritance understanding is important, even if you are not going to use JavaScript OOP patterns, since many of language built-in functionality based on inheritance.
+Understanding JavaScript inheritance mechanics is important, even if you don't plan to use JavaScript OOP patterns, since many of language built-in functionality based on inheritance.
 
-I am not advocating of using OOP patterns and "classical"-like inheritance in JavaScript at all. 
+I am not advocating of using OOP patterns and "classical"-like inheritance in JavaScript at all.
 I personally prefer using "factory" and "mixin" instead of a "constructor" pattern. But this post is not about patterns, it is only about JavaScript prototype-based inheritance *mechanics* visualization.
 
 **Diagrams notation:**
@@ -20,7 +20,7 @@ I personally prefer using "factory" and "mixin" instead of a "constructor" patte
 * All other sections in a block are properties of this object
 * Arrows are references, with meaning, that given property holds reference to a pointed object. Source of arrow is important, it identifies property, but end is not, it is always points to another object
 * Prototype chain, which is used by JavaScript inheritance system is colored in red
-* Built-in porperties, some times, are not listed and shortened to `<built-ins>`
+* Built-in porperties, are not listed and shortened to `<built-ins>`
 
 ## TL;DR
 This post is all about these diagrams:
@@ -36,30 +36,32 @@ If you understand them completely - you have done, if not - below is a more deta
 
 ## Some JavaScript basics
 ### Basic part
-* In JavaScript we have functions and objects
+* In JavaScript ther are functions and objects
 * There is no `classes` and no `constructors` in a language. ES6 `class` is only a syntactical sugar
-* There are no `methods` or `members` in an object, there are only `properties`
-* Object property can hold a value or reference to another object or function
+* There are no `methods` or `members` in an object, there are only `properties`. Exception: `get()` and `set()` special syntax.
+* Object property can hold a _value_ or _reference_ to another object or function
 * Functions are also objects, but of special type
 * Any function can be invoked as a constructor, but this doesn't mean it *should* be invoked as a constructor
 * Functions, which are intended to be used as constructors, just called `constructor functions`. Tey have to be invoked with a `new` keyword to construct a new object
 * By convention, constructor functions are named with `PascalCase`, all other functions are named with `camelCase`
 * Function in JavaScript is a main force. It can be used as:
-  * a regular function
-  * an object, because it is object
+  * a function
+  * an instance method
+  * a static method
+  * an object, because it is an object
   * a constructor
   * a name space
   * a closure to capture context
-  * ... and hundreds of other usages
+  * ...
 
 ### Advanced part
 #### Functions
 * Every **function declaration** immediately creates **TWO OBJECTS**:
   * the `function` object itself
-  * the `prototype` object, belonging to this function
+  * the `prototype` object, owned by this function
   * That happens **before** any code execution even begins, just after code parsing
-* `function` object can be accessed just using function name without parenthesis, for example `myFunction`
-* `prototype` object can be accessed using `prototype` property of `function` object, for example `myFunction.prototype`
+* `function` object can be accessed just using function name without parenthesis, for example: `myFunction`
+* prototype object can be accessed using `prototype` property of `function` object, for example: `myFunction.prototype`
 * `prototype` object is used by JavaScript, when function is invoked as a `constructor` (with `new` keyword) to initialize newly constructed object `__proto__` property
 * `prototype` object of `constructor function` is reminiscent of what is usually stored in `class` definition, in classical OOP languages like Java and C++
 * `constructor function` and its `prototype` object are always come togehter
@@ -71,7 +73,7 @@ If you understand them completely - you have done, if not - below is a more deta
 * `function` object and its `prototype` object, **both**, also have `__proto__` property
 * `__proto__` property as an accessor, standardized only in ES6. In ES5, existance of `__proto__` property depends on implementation. In ES5 standard way to access value of `[[Prototype]]` property is `Object.getPrototypeOf()` method
 * In ES6 `__proto__` property can be set, it just holds reference to another object. In ES6 there is also a `Object.setPrototypeOf()` method
-* It is possible to create object without `__proto__` property using `var obj = Object.create(null)`
+* It is possible to create object with `__proto__` property set to `null` using `var obj = Object.create(null)`
 * Object, which is referenced by `__proto__` property of a given object, is called its `parent`. That `parent` object can also have `__proto__` property to its own `parent`, thus forming `prototype chain`
 * `prototype chain` of objects or `prototypal inheritance chain` is a way, how **inheritance** is implemented in JavaScript
 * When JavaScript runtime looks for a property, with a given name, on an object, it first examines object itself, and then all objects down its prototype chain
@@ -91,7 +93,7 @@ This is a list of most popular JavaScript built-in constructors. They are constr
 
 More reading: [MDN Standard built-in objects] (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects)
 
-Most confusing, of course, are `Function` and `Object`. Technically, they both are functions, constructor functions. 
+Most confusing, of course, are `Function` and `Object`. Technically, they both are functions, constructor functions.
 
 ## "Function" and "Object" terms mess
 Close your eyes and take it as given.
@@ -125,7 +127,7 @@ Relation between `Function` and `Object` constructors is very important. It play
 
 To summarize:
 * Every function in JS is an object, more exactly - two objects: function itself and its prototype
-* There are two distinct constructor functions `Function` and `Object` related to each-other
+* There are two distinct built-in constructor functions `Function` and `Object` related to each-other
 * `Function.prototype` object itself inherits from `Object.prototype`
 * Every function in the system inherits from `Function.prototype`
 * Every object in the system inherits from `Object.prototype`
@@ -138,13 +140,13 @@ As you may see `Function` and `Object` are both functions, thus, they both have 
 
 `Function` and `Object` are both functions, thus their `__proto__` property, refers to `Function.prototype`, which itself has `__proto__` property referencing to `Object.prototype`.
 
-Both `prototype` and `__proto__` properties of a `Function` refer to the same `Function.prototype` object, which is an exclusive situation, existing only for built-in `Function` constructor.
+Both `prototype` and `__proto__` properties of a `Function` refer to the same `Function.prototype` object, which is a unique situation, valid only for built-in `Function` constructor.
 
 ## "Prototype" term mess
-When one says word "prototype", it immediately starts real mess in heads of his listeners. Speaker always need to be precisely clear, what he is talking about.
+When one says word "prototype", it immediately starts a real mess in heads of audience. Speaker always need to be precisely clear, what he is talking about.
 
 Meanings of term "prototype":
-* A prototype of a given object
+* A "prototype" of a given object
   * Its parent
   * Accessible with `someObject.__proto__` property, not `prototype` property
   * The most confusing part is:
@@ -162,7 +164,7 @@ To summarize:
 * `prototype` property of a function holds reference to an auxiliary object, which is used only, when the function is invoked as a constructor, with `new` keyword, and completely ignored for all other regular functions
 * Any object has prototype chain
 * **Prototype chain is built using `__proto__` property, not `prototype` property**
-* Functions are also objects, and thus have `__proto__` property, referencing to `Function.prototype` built-in object
+* Functions are also objects, and thus have `__proto__` property, referencing directly to `Function.prototype` built-in object. Their prototype chain is always `someFunction -> Function.prototype -> Object.prototype`
 * All prototype chains ends with `Object.prototype`
 * `Object.prototype.__proto__` holds `null`. This is real end of prototype chain
 
@@ -173,11 +175,11 @@ function foo(){}
 ```
 ![alt Function in Javascript](./images/foo.png "Function in Javascript")
 
-What we can see here:
-* function declaration creates two objects: `foo` itself and `foo.prototype`, even if `foo` does not going to be used as constructor function
-* `foo` inherits from `Function.prototype`
+What we can see:
+* function declaration creates two objects: `foo` itself and `foo.prototype`, even if `foo` does not going to be used as a constructor
+* `foo` inherits directly from `Function.prototype`
 * `foo.prototype` inherits from `Object.prototype`
-* this inheritance valid for any, even anonymous function
+* this inheritance valid for any, even anonymous or arrow function.
 
 What we don't see is that `foo` itself has internal `[[Code]]` property, which cannot be accessed but is used when we invoke it with `foo()`.
 
@@ -186,6 +188,8 @@ When you use `foo.someMethod()`, all built-in methods come from `Function.protot
 `foo.prototype` typically does not used at all, if function is not a constructor, and vice versa, is used in the case of a constructor function.
 
 `foo.prototype` can be set to any other object reference or primitive value. Setting it to a new object or define new properties on it is a common pattern to define a constructor.
+
+ES6 arrow function do not have `prototype` object created by default. It cannot be used as a constructor because it has lexical `this` and cannot initialize new instance properties.
 
 ## Creating simple objects with inheritance
 Simple objects in JavaScript created with `object literal` syntax or with `Object.create` function.
@@ -281,7 +285,7 @@ console.log(bar.constructor.staticMethod()); // "I am static", method available 
 
 ![alt JavaScript static method](./images/static.png "JavaScript static method")
 
-Static methods of constructor are not accessible on objects, created with this consrtuctor, they are available on a constructor itself.
+Static methods of constructor are not accessible on instances, created with this consrtuctor, they are available on a constructor itself.
 
 A lot of useful design patterns in JavaScript are implemented putting methods on a `constructor function` object, for example `factory` functions. Such a `constructor` can be used as a `namespace` or `singleton`.
 
@@ -333,8 +337,8 @@ Prototype chain of `donald` is `donald -> TalkingDuck.prototype -> Duck.prototyp
 Note that `name` is own property of `donald`, though it is created with `Duck` constructor. This is because `Duck` constructor is invoked with `Duck.call(this, name)`, where `this` points to newly created object inside `TalkingDuck` constructor and then passed down as an invocation context to `Duck` constructor. See [MDN call() reference](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
 
 ## Prototype pollution
-Prototype pollution is changing properties of objects in a prototype chain, affecting all other existing instances.
-The rule of thumb, is not to put properties on a constructor prototype object. Only initialize them inside constructor function body. Constructor prototype should have only methods.
+Prototype pollution is changing properties of objects taking part in a prototype chain, affecting all other existing instances. Usually these objects are of type `SomeConstructor.prototype`. Setting properties values on them makes these properties visible for all instances of `SomeConstructor` and its descendant constructors resulting in unpredictable or undesired behaviours.
+Another case is an incorrect constructor function design. The rule of thumb, is not to put value holding properties on a constructor prototype object, but only initialize them inside constructor function body. Constructor prototype should contain only methods.
 
 **Wrong!**
 ```javascript
@@ -363,14 +367,16 @@ Collection.prototype.add = function (x) {
 };
 ```
 
+Next case of prototype pollution is any kind of modification of built-in constructor prototype object, for example `Object.prototype` or `Function.prototype`. Sometimes it is really tempting and some frameworks do it as a feature, but now it is considered strongly as an anti-pattern by JS community.
+
 ## Factory functions
 Factory function in JavaScript is not a language feature, it is a pattern. Many patterns in JavaScript are available just because of the power of prototype-based inheritance.
 
-Factory function is very popular and powerful JavaScript OOP pattern. There are hundreds of implementations of it in many libraries and framweorks, and of course, you can create your own.
+Factory function is very popular and powerful JavaScript OOP pattern. There are hundreds of implementations of it in many libraries and frameworks.
 
 Factory function pattern is simple, it allows you create JavaScript objects and establish `prototypal inheritance chain`, but without usage of `constructor function`, using `factory function` instead. Factory functions can use constructors behind the scenes.
 
-Node.js `http.createServer` is a typical example of factory function. It returns a new instance of `http.Server` class. New object is created wthout using `constructor function` and `new` keyword.
+Node.js `http.createServer` is a typical example of factory function. It returns a new instance of `http.Server` class. New object is created without using `constructor function` and `new` keyword.
 
 ```javascript
 // Load the http module
@@ -385,29 +391,29 @@ var server = http.createServer(function (request, response) {
 // server is an instance of http.Server class
 console.log(server instanceof http.Server); // true
 
-// Call listen method inherited from http.Server class 
+// Call listen method inherited from http.Server class
 server.listen(8000);
 
 console.log(server.hasOwnProperty('listen')); // false
 ```
-Factory function can result in prototype chain similar to what we get using constructors. It is also can be implemented without usage of constructors, replacing them with some sort of `init` function, but still resulting in a prototype chain of objects. In later case `instanceof` operator will not work, and developer may need to use `Duck typing` to detect object type.
+Factory function can result in prototype chain similar to what we get using constructors. It is also can be implemented without usage of constructors, replacing them with some sort of `init` function, but still resulting in a prototype chain of objects. In later case `instanceof` operator will not work, and developer may need to use `Duck typing` technique to detect object type.
 
 ## Mixins
 Mixin is another popular and powerful JavaScript pattern. It is also kind of inheritance but not using `prototypal inheritance chain`.
 
 Main goals of using mixins are `multiple inheritance` and `performance boost`.
 
-Mixin is a function, which mixes behaviours from one or more `donor` objects to `target` object. Technically, it consists of copying all methods and properties from donors to target object, allowing it to achieve similar behaviour.
+Mixin is a function, which borrows behaviours from one or more `donor` objects to `target` object. Technically, it consists of copying all methods and properties from donors to target object, allowing it to achieve similar behaviour.
 
-The most important part here, is that methods, copied from donors are not copied or cloned itself. They are not duplicated. The mixin function only copies references to them. All resulting mixed instances refer to the same set of functions.
+The most important part here, is that methods, copied from donor are not copied or cloned itself. Function objects are not duplicated. Mixin function only copies references to them. All resulting mixed instances refer to the same set of functions.
 
-Multiple inheritance is achieved by mixing several objects into one.
+Multiple inheritance is achieved by mixing behaviours from several objects into one.
 
-Performance boost is achieved by the fact, that prototype chain lookups in JavaScript are expensive, and when all methods from parents reside directly on a child, it accelerates performance.
+Performance boost is achieved by the fact, that prototype chain lookups are expensive, and when all methods from donors are reside directly on a child, it skips lookup and accelerates invocation.
 
 Mixin function holds intact `__proto__` property of target object.
 
-`instanceof` operator, as well, will not work.
+`instanceof` operator will not work.
 
 ## Reading
 * [MDN Introduction to Object-Oriented JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript)
