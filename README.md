@@ -338,6 +338,7 @@ Note that `name` is own property of `donald`, though it is created with `Duck` c
 
 ## Prototype pollution
 Prototype pollution is changing properties of objects taking part in a prototype chain, affecting all other existing instances. Usually these objects are of type `SomeConstructor.prototype`. Setting properties values on them makes these properties visible for all instances of `SomeConstructor` and its descendant constructors resulting in unpredictable or undesired behaviours.
+
 Another case is an incorrect constructor function design. The rule of thumb, is not to put value holding properties on a constructor prototype object, but only initialize them inside constructor function body. Constructor prototype should contain only methods.
 
 **Wrong!**
