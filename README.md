@@ -292,7 +292,7 @@ A lot of useful design patterns in JavaScript are implemented putting methods on
 ## Classical JavaScript inheritance and OOP
 ```javascript
 // Parent constructor
-var Duck = function (name) {
+function Duck (name) {
   this.name = name;
 };
 
@@ -302,7 +302,7 @@ Duck.prototype.quack = function () {
 };
 
 // Child constructor
-var TalkingDuck = function (name) {
+function TalkingDuck (name) {
   // Call parent constructor with proper arguments
   Duck.call(this, name); // This is often forgotten
 }
