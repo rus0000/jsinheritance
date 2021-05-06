@@ -1,5 +1,7 @@
 #  JavaScript prototype-based inheritance visualized
 
+HORACIO ESTUVO AQUI
+
 This post is actual only for:
 * ECMA-262 5th edition called ECMAScript 5 (ES5)
 * ECMA-262 6th edition called ECMAScript 2015 (ES6)
